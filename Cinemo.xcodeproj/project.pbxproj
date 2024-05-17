@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7A4FA2122BF74E810045F8DA /* NavigationBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */; };
 		7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2152BF759B80045F8DA /* NetworkCall.swift */; };
+		7A4FA2182BF7715C0045F8DA /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2172BF7715C0045F8DA /* MovieViewModel.swift */; };
+		7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2192BF772D40045F8DA /* StatusResponse.swift */; };
 		7AC007E12BF7306D00FF539D /* CinemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E02BF7306D00FF539D /* CinemoApp.swift */; };
 		7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E22BF7306D00FF539D /* ContentView.swift */; };
 		7AC007E52BF7307000FF539D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC007E42BF7307000FF539D /* Assets.xcassets */; };
@@ -20,7 +22,7 @@
 		7AC0080E2BF7315700FF539D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0080D2BF7315700FF539D /* Search.swift */; };
 		7AC008102BF7316600FF539D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0080F2BF7316600FF539D /* Menu.swift */; };
 		7AC008122BF7317600FF539D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC008112BF7317600FF539D /* Settings.swift */; };
-		7AC008162BF731A400FF539D /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC008152BF731A400FF539D /* Movies.swift */; };
+		7AC008162BF731A400FF539D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC008152BF731A400FF539D /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBottom.swift; sourceTree = "<group>"; };
 		7A4FA2152BF759B80045F8DA /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		7A4FA2172BF7715C0045F8DA /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		7A4FA2192BF772D40045F8DA /* StatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponse.swift; sourceTree = "<group>"; };
 		7AC007DD2BF7306D00FF539D /* Cinemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC007E02BF7306D00FF539D /* CinemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemoApp.swift; sourceTree = "<group>"; };
 		7AC007E22BF7306D00FF539D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 		7AC0080D2BF7315700FF539D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		7AC0080F2BF7316600FF539D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		7AC008112BF7317600FF539D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		7AC008152BF731A400FF539D /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		7AC008152BF731A400FF539D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		7A4FA2132BF7594A0045F8DA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7A4FA2172BF7715C0045F8DA /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,7 +180,8 @@
 		7AC008142BF7319000FF539D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7AC008152BF731A400FF539D /* Movies.swift */,
+				7AC008152BF731A400FF539D /* Movie.swift */,
+				7A4FA2192BF772D40045F8DA /* StatusResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC008162BF731A400FF539D /* Movies.swift in Sources */,
+				7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */,
+				7AC008162BF731A400FF539D /* Movie.swift in Sources */,
+				7A4FA2182BF7715C0045F8DA /* MovieViewModel.swift in Sources */,
 				7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */,
 				7AC008122BF7317600FF539D /* Settings.swift in Sources */,
 				7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */,
