@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A4FA2122BF74E810045F8DA /* NavigationBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */; };
+		7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2152BF759B80045F8DA /* NetworkCall.swift */; };
 		7AC007E12BF7306D00FF539D /* CinemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E02BF7306D00FF539D /* CinemoApp.swift */; };
 		7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E22BF7306D00FF539D /* ContentView.swift */; };
 		7AC007E52BF7307000FF539D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC007E42BF7307000FF539D /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBottom.swift; sourceTree = "<group>"; };
+		7A4FA2152BF759B80045F8DA /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		7AC007DD2BF7306D00FF539D /* Cinemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC007E02BF7306D00FF539D /* CinemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemoApp.swift; sourceTree = "<group>"; };
 		7AC007E22BF7306D00FF539D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A4FA2132BF7594A0045F8DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7A4FA2142BF7596B0045F8DA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7A4FA2152BF759B80045F8DA /* NetworkCall.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		7AC007D42BF7306D00FF539D = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +123,8 @@
 		7AC007DF2BF7306D00FF539D /* Cinemo */ = {
 			isa = PBXGroup;
 			children = (
+				7A4FA2142BF7596B0045F8DA /* Networking */,
+				7A4FA2132BF7594A0045F8DA /* ViewModel */,
 				7AC008142BF7319000FF539D /* Model */,
 				7AC0080A2BF7313400FF539D /* Views */,
 				7AC007E02BF7306D00FF539D /* CinemoApp.swift */,
@@ -292,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC008162BF731A400FF539D /* Movies.swift in Sources */,
+				7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */,
 				7AC008122BF7317600FF539D /* Settings.swift in Sources */,
 				7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */,
 				7AC0080E2BF7315700FF539D /* Search.swift in Sources */,
