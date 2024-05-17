@@ -9,7 +9,24 @@ import SwiftUI
 
 struct NavigationBottom: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            Home()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
+            Search()
+                .tabItem{
+                    Image(systemName: "magnifyingglass")
+                }
+            Menu()
+                .tabItem {
+                    Image(systemName: "slider.horizontal.3")
+                }
+            Settings()
+                .tabItem {
+                    Image(systemName: "gear")
+                }
+        }
     }
 }
 
