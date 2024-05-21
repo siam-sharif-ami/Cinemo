@@ -8,7 +8,7 @@
 import Foundation
 class NetworkCall{
 
-    func fetchMovieData() async throws -> [Movie] {
+    func fetchMovieDatabase() async throws -> MovieDatabase {
         
         let endPoint = "https://yts.mx/api/v2/list_movies.json?sort_by=popular&order_by=desc"
         
@@ -24,30 +24,7 @@ class NetworkCall{
         }
         do {
             let decoder = JSONDecoder()
-            let decodedData = try decoder.decode([Movie].self, from: data)
-            return decodedData
-        } catch {
-            throw fetchMovieError.invalidData
-        }
-        
-    }
-    
-    func fetchStatusData() async throws -> StatusResponse {
-        
-        let endPoint = "https://yts.mx/api/v2/list_movies.json?sort_by=popular&order_by=desc"
-        
-        guard let url = URL(string: endPoint) else {
-            throw fetchStatusResponseError.invalidURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-    
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw fetchStatusResponseError.invalidResponse
-        }
-        do {
-            let decoder = JSONDecoder()
-            let decodedData = try decoder.decode(StatusResponse.self, from: data)
+            let decodedData = try decoder.decode(MovieDatabase.self, from: data)
             return decodedData
         } catch {
             throw fetchMovieError.invalidData
