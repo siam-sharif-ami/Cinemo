@@ -19,6 +19,8 @@ class NetworkCall{
         
         let (data, response) = try await URLSession.shared.data(from: url)
         
+        //print(String(data: data, encoding: .utf8))
+        
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw fetchMovieError.invalidResponse
         }

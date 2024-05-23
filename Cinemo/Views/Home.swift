@@ -14,23 +14,24 @@ struct Home: View {
     @State private var viewModel = ViewModel()
     
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators: false){
             VStack(alignment: .leading ){
-                
-                Header(title: "Welcome Back", user: "Siam Sharif Ami")
-                
                 
                 /// Featured View
                 ///
                 ZStack{
-                    HStack{
-                        TabView{
-                            ForEach(movies){ movie in
-                                FeaturedMovie(movies: movie)
-                            }
-                        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-                            .frame(height: 220)
+                    VStack(alignment: .leading){
+                        Header(title: "Welcome Back", user: "Siam Sharif Ami")
+                        HStack{
+                            TabView{
+                                ForEach(viewModel.movieDatabase?.data.movies ?? movies){ movie in
+                                    FeaturedMovie(movies: movie)
+                                }
+                            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                                .frame(height: 220)
+                        }
                     }
+                    
                 }.padding(10)
                 
                 
@@ -53,9 +54,9 @@ struct Home: View {
                 /// Top Movie Picks view
                 ///
                 ///
-                ScrollView(.horizontal){
+                ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(movies) { movie in
+                        ForEach(viewModel.movieDatabase?.data.movies ?? movies ) { movie in
                             TopMoviePicks(movies: movie)
                         }
                     }
@@ -74,9 +75,9 @@ struct Home: View {
                 }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
                     .foregroundColor(.white)
                 
-                ScrollView(.horizontal){
+                ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(movies){ movie in
+                        ForEach(viewModel.movieDatabase?.data.movies ?? movies){ movie in
                             UpcomingMovie(movies: movie)
                         }
                     }
@@ -87,7 +88,7 @@ struct Home: View {
             
             }
             //end of scrollview
-        }.background(Color.black.opacity(0.8))
+        }.background(Color.black.opacity(0.9))
             .onAppear(){
                 Task{
                     await viewModel.fetchMovieData()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeaturedMovie: View {
-    let movies:MovieListModel
+    var movies:MovieListModel
 
     
     var body: some View{

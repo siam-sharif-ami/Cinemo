@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Data : Codable{
+struct RepoData : Codable{
     var movies: [MovieListModel]
 }
