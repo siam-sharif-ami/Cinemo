@@ -13,7 +13,7 @@ struct FeaturedMovie: View {
     
     var body: some View{
         
-        AsyncImage(url: URL(string: movies.coverImage)){ phase in
+        AsyncImage(url: URL(string: movies.medium_cover_image)){ phase in
             if let image = phase.image {
                 image
                     .resizable()

@@ -11,6 +11,7 @@ import SwiftUI
 struct Home: View {
     
     @State private var movies = MovieListModel.examples()
+    @State private var viewModel = ViewModel()
     
     var body: some View {
         ScrollView{
@@ -87,6 +88,11 @@ struct Home: View {
             }
             //end of scrollview
         }.background(Color.black.opacity(0.8))
+            .onAppear(){
+                Task{
+                    await viewModel.fetchMovieData()
+                }
+            }
         
     }
 }

@@ -11,12 +11,7 @@ struct MovieDatabase: Codable {
     
     let status: String
     let status_message: String
-    let data: RepoData
+    let data: Data
 }
 
-struct RepoData: Codable {
-    
-    let movies: [Movie]
-    
-}
 
