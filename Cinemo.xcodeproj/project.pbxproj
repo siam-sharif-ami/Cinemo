@@ -14,6 +14,9 @@
 		7A4FA2122BF74E810045F8DA /* NavigationBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */; };
 		7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2152BF759B80045F8DA /* NetworkCall.swift */; };
 		7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2192BF772D40045F8DA /* StatusResponse.swift */; };
+		7A70D07A2BFF0CC2003E10B1 /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D0792BFF0CC2003E10B1 /* GetStarted.swift */; };
+		7A70D07C2BFF1118003E10B1 /* LoginBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D07B2BFF1118003E10B1 /* LoginBackgroundImage.swift */; };
+		7AB10A1A2BFEFEA3004039E6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB10A192BFEFEA3004039E6 /* Data.swift */; };
 		7AC007E12BF7306D00FF539D /* CinemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E02BF7306D00FF539D /* CinemoApp.swift */; };
 		7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC007E22BF7306D00FF539D /* ContentView.swift */; };
 		7AC007E52BF7307000FF539D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC007E42BF7307000FF539D /* Assets.xcassets */; };
@@ -27,7 +30,6 @@
 		7AC008122BF7317600FF539D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC008112BF7317600FF539D /* Settings.swift */; };
 		7AEE6BDA2BFB5FBE00A88715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE6BD92BFB5FBE00A88715 /* ViewModel.swift */; };
 		7AEE6BDC2BFB6CE600A88715 /* MovieDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE6BDB2BFB6CE600A88715 /* MovieDatabase.swift */; };
-		7AEE6BDE2BFB6DF300A88715 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE6BDD2BFB6DF300A88715 /* Movie.swift */; };
 		7AEE6BE02BFB79F400A88715 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE6BDF2BFB79F400A88715 /* MovieListModel.swift */; };
 		7AEE6BE22BFB7A6800A88715 /* MovieDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE6BE12BFB7A6800A88715 /* MovieDetailsModel.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,9 @@
 		7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBottom.swift; sourceTree = "<group>"; };
 		7A4FA2152BF759B80045F8DA /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		7A4FA2192BF772D40045F8DA /* StatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponse.swift; sourceTree = "<group>"; };
+		7A70D0792BFF0CC2003E10B1 /* GetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
+		7A70D07B2BFF1118003E10B1 /* LoginBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundImage.swift; sourceTree = "<group>"; };
+		7AB10A192BFEFEA3004039E6 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7AC007DD2BF7306D00FF539D /* Cinemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC007E02BF7306D00FF539D /* CinemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemoApp.swift; sourceTree = "<group>"; };
 		7AC007E22BF7306D00FF539D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		7AC008112BF7317600FF539D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7AEE6BD92BFB5FBE00A88715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7AEE6BDB2BFB6CE600A88715 /* MovieDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabase.swift; sourceTree = "<group>"; };
-		7AEE6BDD2BFB6DF300A88715 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7AEE6BDF2BFB79F400A88715 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
 		7AEE6BE12BFB7A6800A88715 /* MovieDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +163,7 @@
 			children = (
 				7AC007E72BF7307000FF539D /* Preview Assets.xcassets */,
 				7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */,
+				7A70D07B2BFF1118003E10B1 /* LoginBackgroundImage.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				7AC0080F2BF7316600FF539D /* Menu.swift */,
 				7AC008112BF7317600FF539D /* Settings.swift */,
 				7A3125DF2BFCDCD5004D892B /* Header.swift */,
+				7A70D0792BFF0CC2003E10B1 /* GetStarted.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,7 +206,7 @@
 			children = (
 				7A4FA2192BF772D40045F8DA /* StatusResponse.swift */,
 				7AEE6BDB2BFB6CE600A88715 /* MovieDatabase.swift */,
-				7AEE6BDD2BFB6DF300A88715 /* Movie.swift */,
+				7AB10A192BFEFEA3004039E6 /* Data.swift */,
 				7AEE6BDF2BFB79F400A88715 /* MovieListModel.swift */,
 				7AEE6BE12BFB7A6800A88715 /* MovieDetailsModel.swift */,
 			);
@@ -341,14 +347,16 @@
 				7AEE6BE02BFB79F400A88715 /* MovieListModel.swift in Sources */,
 				7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */,
 				7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */,
-				7AEE6BDE2BFB6DF300A88715 /* Movie.swift in Sources */,
 				7AC008122BF7317600FF539D /* Settings.swift in Sources */,
 				7AC007E32BF7306D00FF539D /* ContentView.swift in Sources */,
 				7AEE6BDA2BFB5FBE00A88715 /* ViewModel.swift in Sources */,
+				7A70D07A2BFF0CC2003E10B1 /* GetStarted.swift in Sources */,
+				7AB10A1A2BFEFEA3004039E6 /* Data.swift in Sources */,
 				7AC0080E2BF7315700FF539D /* Search.swift in Sources */,
 				7A3125E02BFCDCD5004D892B /* Header.swift in Sources */,
 				7AC0080C2BF7314900FF539D /* Home.swift in Sources */,
 				7AEE6BE22BFB7A6800A88715 /* MovieDetailsModel.swift in Sources */,
+				7A70D07C2BFF1118003E10B1 /* LoginBackgroundImage.swift in Sources */,
 				7AC007E12BF7306D00FF539D /* CinemoApp.swift in Sources */,
 				7A0E38462BFCD96D00238D2F /* TopMoviePicks.swift in Sources */,
 				7AEE6BDC2BFB6CE600A88715 /* MovieDatabase.swift in Sources */,

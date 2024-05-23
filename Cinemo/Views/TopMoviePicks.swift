@@ -13,7 +13,7 @@ struct TopMoviePicks: View {
     
     var body: some View{
         VStack(alignment: .leading){
-            AsyncImage(url: URL(string: movies.coverImage)){phase in
+            AsyncImage(url: URL(string: movies.medium_cover_image)){phase in
                 if let image = phase.image {
                     image
                         .resizable()
@@ -33,8 +33,8 @@ struct TopMoviePicks: View {
                 
             HStack{
                 Text("\(movies.year)")
-                Text("\(movies.ageRating)+")
-                Text("\(movies.duration/60)h \(movies.duration%60)m")
+                Text("\(movies.mpa_rating)")
+                Text("\(movies.runtime/60)h \(movies.runtime%60)m")
                     
             }.foregroundColor(.white)
                 .font(.subheadline)
