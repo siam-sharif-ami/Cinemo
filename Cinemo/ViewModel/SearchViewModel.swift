@@ -6,3 +6,23 @@
 //
 
 import Foundation
+
+@Observable
+class SearchViewModel{
+    let networkCall: NetworkCall
+    
+    var SearchData: MovieDatabase?
+    
+    init(networkCall: NetworkCall = NetworkCall()) {
+        self.networkCall = networkCall
+    }
+    
+    @MainActor
+    func fetchSearchData(search: String) async {
+        do{
+            SearchData = try await networkCall.fetchSearchData(searchedString: search)
+        }catch{
+            print("problem in fetching dataClass")
+        }
+    }
+}

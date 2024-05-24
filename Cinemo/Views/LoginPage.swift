@@ -28,7 +28,7 @@ struct LoginPage: View {
                 TextField("username or email", text: $username)
                     .padding()
                     .background(Color(.systemGray6))
-                    .cornerRadius(8)
+                    .cornerRadius(20)
                     .padding()
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .disableAutocorrection(true)
@@ -49,7 +49,7 @@ struct LoginPage: View {
                     }
                 }.padding()
                     .background(Color(.systemGray6))
-                    .cornerRadius(8)
+                    .cornerRadius(20)
                     .padding(.horizontal)
                 
                 Spacer()
@@ -61,7 +61,7 @@ struct LoginPage: View {
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .cornerRadius(20)
                         .padding()
                 }
                 .padding(.top)
