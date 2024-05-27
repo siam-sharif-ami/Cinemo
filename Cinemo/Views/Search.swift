@@ -55,12 +55,16 @@ struct Search: View {
                 
                 
                 ScrollView{
-                    if  !searchedString.isEmpty{
+                    if  !searchedString.isEmpty &&  searchViewModel.SearchData != nil {
                         LazyVStack{
-                            ForEach(searchViewModel.SearchData?.data.movies ?? searchedMovies){ movie in
-                                SearchTabView(search: movie)
+                            if let movie = searchViewModel.SearchData?.data.movies{
                                 
+                                ForEach(movie){ phase in
+                                    SearchTabView(search: phase)
+                                    
+                                }
                             }
+                            
                         }
                     }else {
                         Text("No Matches Found")

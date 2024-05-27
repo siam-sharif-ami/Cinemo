@@ -13,6 +13,7 @@ struct TopMoviePicks: View {
     
     var body: some View{
         VStack(alignment: .leading){
+            
             AsyncImage(url: URL(string: movies.medium_cover_image)){phase in
                 if let image = phase.image {
                     image
@@ -20,8 +21,8 @@ struct TopMoviePicks: View {
                         .cornerRadius(10)
                         .frame(width: 150, height: 200)
                         .shadow(radius: 5)
-                        
-                        
+                    
+                    
                 }
             }
             Text(movies.title)
@@ -30,17 +31,17 @@ struct TopMoviePicks: View {
                 .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.white)
                 .lineLimit(1)
-                
+            
             HStack{
                 Text("\(movies.year)")
                 Text("\(movies.mpa_rating)")
                 Text("\(movies.runtime/60)h \(movies.runtime%60)m")
-                    
+                
             }.foregroundColor(.white)
                 .font(.subheadline)
-                
+            
         }
-            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
     }
 }
 

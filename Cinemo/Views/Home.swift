@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import Shimmer
 
 struct Home: View {
     
     @State private var movies = MovieListModel.examples()
     @State private var viewModel = ViewModel()
+    @State private var loaded = false
     
     var body: some View {
         ScrollView(showsIndicators: false){
@@ -23,12 +24,20 @@ struct Home: View {
                     VStack(alignment: .leading){
                         Header(title: "Welcome Back", user: "Siam Sharif Ami")
                         HStack{
-                            TabView{
-                                ForEach(viewModel.movieDatabase?.data.movies ?? movies){ movie in
-                                    FeaturedMovie(movies: movie)
-                                }
-                            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-                                .frame(height: 220)
+                            if loaded == true {
+                                TabView{
+                                    if let movie = viewModel.movieDatabase?.data.movies{
+                                        ForEach(movie){ phase in
+                                            FeaturedMovie(movies: phase)
+                                        }
+                                    }
+                                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                                    .frame(height: 220)
+                            }else {
+                                FeaturedMovie(movies: MovieListModel.example1())
+                                    .redacted(reason: /*@START_MENU_TOKEN@*/.placeholder/*@END_MENU_TOKEN@*/)
+                                    .shimmering()
+                            }
                         }
                     }
                     
@@ -36,7 +45,6 @@ struct Home: View {
                 
                 
                 /// Featured View
-                
                 
                 HStack{
                     Text("Top Movie Picks")
@@ -48,23 +56,29 @@ struct Home: View {
                 }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
                     .foregroundColor(.white)
                 
-                
-                
-                
+            
                 /// Top Movie Picks view
                 ///
                 ///
-                ScrollView(.horizontal, showsIndicators: false){
+                let topMovieScroll = ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(viewModel.movieDatabase?.data.movies ?? movies ) { movie in
-                            TopMoviePicks(movies: movie)
+                        ForEach(viewModel.movieDatabase?.data.movies ?? movies) { phase in
+                            TopMoviePicks(movies: phase)
                         }
                     }
                 }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                 
+                if loaded == true {
+                    topMovieScroll
+                }else {
+                    topMovieScroll
+                        .redacted(reason: .placeholder)
+                        .shimmering()
+                }
+                
                 
                 /// Top Movie picks view
-                ///
+                /// upcoming movie view
                 HStack{
                     Text("Upcoming Movies")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -75,26 +89,33 @@ struct Home: View {
                 }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
                     .foregroundColor(.white)
                 
-                ScrollView(.horizontal, showsIndicators: false){
+                
+                let upcomingScroll = ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(viewModel.movieDatabase?.data.movies ?? movies){ movie in
-                            UpcomingMovie(movies: movie)
+                        ForEach(viewModel.movieDatabase?.data.movies ?? movies ){ phase in
+                            UpcomingMovie(movies: phase)
                         }
                     }
                 }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                 
+                if loaded == true {
+                    upcomingScroll
+                }else{
+                    upcomingScroll
+                        .redacted(reason: /*@START_MENU_TOKEN@*/.placeholder/*@END_MENU_TOKEN@*/)
+                        .shimmering()
+                }
+                /// upcoming movie picks view
                 
-                /// top movie picks view
-            
             }
             //end of scrollview
         }.background(Color.black.opacity(0.9))
             .onAppear(){
                 Task{
                     await viewModel.fetchMovieData()
+                    loaded = true
                 }
             }
-        
     }
 }
 

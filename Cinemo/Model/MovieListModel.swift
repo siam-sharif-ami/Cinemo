@@ -26,6 +26,24 @@ struct MovieListModel: Identifiable, Codable{
                 "History",
                 "Western"
                 ], rating: 9.3, mpa_rating: "", year: 1994, runtime: 142, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2024/medium-cover.jpg"),
+            MovieListModel(id: 2, title: "Golden Kamuy", genres: [
+                "Action",
+                "Adventure",
+                "History",
+                "Western"
+                ], rating: 9.3, mpa_rating: "", year: 1994, runtime: 142, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2024/medium-cover.jpg"),
+            MovieListModel(id: 3, title: "Golden Kamuy", genres: [
+                "Action",
+                "Adventure",
+                "History",
+                "Western"
+                ], rating: 9.3, mpa_rating: "", year: 1994, runtime: 142, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2024/medium-cover.jpg"),
+            MovieListModel(id: 4, title: "Golden Kamuy", genres: [
+                "Action",
+                "Adventure",
+                "History",
+                "Western"
+                ], rating: 9.3, mpa_rating: "", year: 1994, runtime: 142, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2024/medium-cover.jpg"),
             
         ]
     }

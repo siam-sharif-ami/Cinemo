@@ -22,7 +22,11 @@ class SearchViewModel{
         do{
             SearchData = try await networkCall.fetchSearchData(searchedString: search)
         }catch{
-            print("problem in fetching dataClass")
+            SearchData = nil
         }
+    }
+    
+    func clearSearchData(){
+        SearchData = nil
     }
 }
