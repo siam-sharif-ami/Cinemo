@@ -21,8 +21,9 @@ class SearchViewModel{
     func fetchSearchData(search: String) async {
         do{
             SearchData = try await networkCall.fetchSearchData(searchedString: search)
-        }catch{
-            SearchData = nil
+            print(SearchData)
+        }catch {
+            print("Problem in fetching search data")
         }
     }
     

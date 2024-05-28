@@ -53,6 +53,7 @@ class NetworkCall{
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(MovieDatabase.self, from: data)
             return decodedData
+            
         }catch{
             throw fetchSearchResponseError.invalidData
         }

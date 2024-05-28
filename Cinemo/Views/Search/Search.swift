@@ -39,10 +39,13 @@ struct Search: View {
                     TextField("Search...", text: $searchedString)
                         .autocapitalization(.none)
                         .autocorrectionDisabled(true)
-                        .onChange(of: searchedString){ newValue in
+                        .onChange(of: searchedString){
+                            newValue in
+                            
                             searchTask?.cancel()
+                            searchViewModel.clearSearchData()
                             Task.init {
-                                try? await Task.sleep(nanoseconds: 500_500_500)
+                                try? await Task.sleep(nanoseconds: 1000000000)
                                 if !Task.isCancelled{
                                     await searchViewModel.fetchSearchData(search: newValue)
                                 }
