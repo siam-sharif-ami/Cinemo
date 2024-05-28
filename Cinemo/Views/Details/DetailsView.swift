@@ -8,17 +8,53 @@
 import SwiftUI
 
 struct DetailsView: View {
-    var id: Int
-    @State private var viewModel = DetailsViewModel()
+    @State var id: Int
+    @State var viewModel = DetailsViewModel()
+    var dummyMovie = MovieDetailsModel.example1()
+    @State var viewModelLoaded = false
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
-            .onAppear(){
-                Task{
-                    await viewModel.fetchMovieDetails(movieID: id )
+        ZStack{
+            ZStack{
+                TabView{
+                    if !viewModelLoaded{
+                        Image(systemName: "wineglass")
+                            .resizable()
+                            .cornerRadius(20)
+                            .frame(width: .infinity, height: 300)
+                            .padding()
+                            .redacted(reason: /*@START_MENU_TOKEN@*/.placeholder/*@END_MENU_TOKEN@*/)
+                            .shimmering()
+                    }
+                    else{
+                        if let movieImage = viewModel.movieDetailsDatabase?.data.movie.medium_cover_image {
+                            
+                            AsyncImage(url: URL(string: movieImage)){ phase in
+                                if let image = phase.image{
+                                    image
+                                        .resizable()
+                                        .cornerRadius(20)
+                                        .frame(width: .infinity, height: 300)
+                                        .padding()
+                                }
+                            }
+                        }
+                    }
+                    
+                    HStack{
+                        
+                    }
+                    
                 }
             }
+        }
+        
+        .onAppear(){
+            Task{
+                await viewModel.fetchMovieDetails(movieID: id )
+                viewModelLoaded = true
+            }
+        }
     }
 }
 

@@ -17,7 +17,7 @@ struct MovieDetailsModel : Codable, Identifiable {
     let genres: [String]
     let description_intro: String
     let mpa_rating: String
-    let large_cover_image: String
+    let medium_cover_image: String
     let cast: [CastData]
     
     static func example1() -> MovieDetailsModel {
@@ -33,7 +33,7 @@ struct MovieDetailsModel : Codable, Identifiable {
             genres: ["Drama", "Crime"],
             description_intro: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
             mpa_rating: "R",
-            large_cover_image: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+            medium_cover_image: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
             
             cast: [
                 CastData(name: "Morgan Freeman",
