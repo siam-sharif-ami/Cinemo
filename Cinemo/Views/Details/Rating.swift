@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct Rating: View {
+    
+    let movieDetails: MovieListModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ForEach(0..<6){ index in
+            let image = movieDetails.calculateStars(at: index)
+            Image(systemName: image)
+        }
     }
 }
 
 #Preview {
-    Rating()
+    Rating(movieDetails: MovieListModel.example1())
 }

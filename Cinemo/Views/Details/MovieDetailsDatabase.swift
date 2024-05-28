@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct MovieDetailsDatabase: Codable {
+    let status: String
+    let status_message: String
+    var data: DetailsData
+    
+}

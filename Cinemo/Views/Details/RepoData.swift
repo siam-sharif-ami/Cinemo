@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct RepoData{
+    var movies: MovieDetailsModel
+}

@@ -6,3 +6,6 @@
 //
 
 import Foundation
+struct DetailsData : Codable {
+    var movie: MovieDetailsModel
+}

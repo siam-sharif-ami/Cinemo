@@ -23,7 +23,7 @@ class SearchViewModel{
             SearchData = try await networkCall.fetchSearchData(searchedString: search)
             print(SearchData)
         }catch {
-            SearchData = nil
+            print("Problem in fetching search data")
         }
     }
     
