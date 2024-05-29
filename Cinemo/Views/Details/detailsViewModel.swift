@@ -42,6 +42,9 @@ class DetailsViewModel {
         }
         
     }
+    func runtimeFormat(_ runtime: Int ) -> String {
+        return "\(runtime/60)h \(runtime%60)m"
+    }
     
 }
 

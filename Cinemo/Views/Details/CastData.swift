@@ -6,9 +6,9 @@
 //
 
 import Foundation
-struct CastData : Codable {
-    let name: String
-    let character_name: String
-    let url_small_image: String
-    let imdb_code: String 
+struct CastData : Codable, Hashable  {
+    let name: String?
+    let character_name: String?
+    let url_small_image: String?
+    let imdb_code: String?
 }

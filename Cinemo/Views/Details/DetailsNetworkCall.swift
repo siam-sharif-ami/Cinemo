@@ -11,7 +11,7 @@ class DetailsNetworkCall {
     
     func fetchMovieDetails(movieID id: Int) async throws  -> MovieDetailsDatabase {
         
-        let endPoint = "https://yts.mx/api/v2/movie_details.json?movie_id=\(id)&with_images=true&with_cast=true"
+        let endPoint = "https://yts.mx/api/v2/movie_details.json?movie_id=\(id)&with_cast=true"
         
         print(endPoint)
         guard let url = URL(string: endPoint) else {
@@ -19,10 +19,13 @@ class DetailsNetworkCall {
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
+
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw fetchMovieError.invalidResponse
         }
+        print(response.statusCode)
+        
         do {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(MovieDetailsDatabase.self, from: data)

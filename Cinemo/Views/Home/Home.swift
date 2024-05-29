@@ -112,7 +112,7 @@ struct Home: View {
                     
                 }
                 //end of scrollview
-            }.background(Color.black.opacity(0.9))
+            }.background(Color.black)
                 .onAppear(){
                     Task{
                         await viewModel.fetchMovieData()

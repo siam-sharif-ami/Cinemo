@@ -15,10 +15,10 @@ struct MovieDetailsModel : Codable, Identifiable {
     let rating: Double
     let runtime: Int
     let genres: [String]
-    let description_intro: String
+    let description_full: String
     let mpa_rating: String
-    let large_cover_image: String
-    let cast: [CastData]
+    let medium_cover_image: String
+    let cast: [CastData]?
     
     static func example1() -> MovieDetailsModel {
         MovieDetailsModel(
@@ -31,20 +31,22 @@ struct MovieDetailsModel : Codable, Identifiable {
             runtime: 142,
             
             genres: ["Drama", "Crime"],
-            description_intro: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+            description_full: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
             mpa_rating: "R",
-            large_cover_image: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+            medium_cover_image: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
             
             cast: [
-                CastData(name: "Morgan Freeman",
-                         character_name: "Ellis Boyd Redding",
-                         url_small_image: "https://image.tmdb.org/t/p/w185/oGJQhOpT8S1M56tvLJc4i8o0ASQ.jpg",
+                CastData(
+                    name: "Annabeth Gish",
+                         character_name: "Ellis Royd",
+                         url_small_image: "https://yts.mx/assets/images/actors/thumb/nm0000112.jpg",
                          imdb_code: "nm0000151"),
                 CastData(
-                    name: "Morgan Freeman",
-                    character_name: "Ellis Boyd Redding",
-                    url_small_image: "https://image.tmdb.org/t/p/w185/oGJQhOpT8S1M56tvLJc4i8o0ASQ.jpg",
+                    name: "Matt Frewer",
+                    character_name: "Donald Trump",
+                    url_small_image: "https://yts.mx/assets/images/actors/thumb/nm0001242.jpg",
                     imdb_code: "nm0000151")
+                
                 
             ]
         )
