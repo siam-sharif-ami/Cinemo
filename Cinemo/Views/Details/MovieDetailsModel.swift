@@ -38,12 +38,12 @@ struct MovieDetailsModel : Codable, Identifiable {
             cast: [
                 CastData(
                     name: "Annabeth Gish",
-                         character_name: "Ellis Boyd Redding",
+                         character_name: "Ellis Royd",
                          url_small_image: "https://yts.mx/assets/images/actors/thumb/nm0000112.jpg",
                          imdb_code: "nm0000151"),
                 CastData(
                     name: "Matt Frewer",
-                    character_name: "Ellis Boyd Redding",
+                    character_name: "Donald Trump",
                     url_small_image: "https://yts.mx/assets/images/actors/thumb/nm0001242.jpg",
                     imdb_code: "nm0000151")
                 
