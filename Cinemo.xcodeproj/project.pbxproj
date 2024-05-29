@@ -14,6 +14,8 @@
 		7A4FA2122BF74E810045F8DA /* NavigationBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */; };
 		7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2152BF759B80045F8DA /* NetworkCall.swift */; };
 		7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4FA2192BF772D40045F8DA /* StatusResponse.swift */; };
+		7A612B102C07277B00983E93 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A612B0F2C07277B00983E93 /* ButtonView.swift */; };
+		7A612B142C07376500983E93 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A612B132C07376500983E93 /* PersonView.swift */; };
 		7A70D07C2BFF1118003E10B1 /* LoginBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D07B2BFF1118003E10B1 /* LoginBackgroundImage.swift */; };
 		7A70D07E2BFF254E003E10B1 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D07D2BFF254E003E10B1 /* WelcomePage.swift */; };
 		7A70D0802BFF35FA003E10B1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D07F2BFF35FA003E10B1 /* LoginPage.swift */; };
@@ -45,6 +47,7 @@
 		7AF0841C2C048CA4007249A0 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF0841B2C048CA4007249A0 /* Shimmer */; };
 		7AF084212C04914B007249A0 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF084202C04914B007249A0 /* testView.swift */; };
 		7AF084232C049162007249A0 /* anotherTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF084222C049162007249A0 /* anotherTestView.swift */; };
+		7AFCB3442C0706CB00199C5F /* CapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCB3432C0706CB00199C5F /* CapsuleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,8 @@
 		7A4FA2112BF74E810045F8DA /* NavigationBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBottom.swift; sourceTree = "<group>"; };
 		7A4FA2152BF759B80045F8DA /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		7A4FA2192BF772D40045F8DA /* StatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponse.swift; sourceTree = "<group>"; };
+		7A612B0F2C07277B00983E93 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		7A612B132C07376500983E93 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		7A70D07B2BFF1118003E10B1 /* LoginBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundImage.swift; sourceTree = "<group>"; };
 		7A70D07D2BFF254E003E10B1 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		7A70D07F2BFF35FA003E10B1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		7AF084102C0456CD007249A0 /* customTabIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTabIndicator.swift; sourceTree = "<group>"; };
 		7AF084202C04914B007249A0 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		7AF084222C049162007249A0 /* anotherTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anotherTestView.swift; sourceTree = "<group>"; };
+		7AFCB3432C0706CB00199C5F /* CapsuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,7 @@
 				7A8210342C05A72B00C7A924 /* Login */,
 				7A8210352C05A75E00C7A924 /* Details */,
 				7AC0080F2BF7316600FF539D /* Menu.swift */,
+				7AFCB3452C070D1A00199C5F /* Reusable */,
 				7AC008112BF7317600FF539D /* Settings.swift */,
 				7AF084102C0456CD007249A0 /* customTabIndicator.swift */,
 				7AF084202C04914B007249A0 /* testView.swift */,
@@ -281,6 +288,16 @@
 				7AEE6BDF2BFB79F400A88715 /* MovieListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7AFCB3452C070D1A00199C5F /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				7AFCB3432C0706CB00199C5F /* CapsuleView.swift */,
+				7A612B0F2C07277B00983E93 /* ButtonView.swift */,
+				7A612B132C07376500983E93 /* PersonView.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +440,7 @@
 				7ADE6CE52C0086E7008AACE9 /* SearchViewModel.swift in Sources */,
 				7A3125E42BFCDD97004D892B /* UpcomingMovie.swift in Sources */,
 				7AF084232C049162007249A0 /* anotherTestView.swift in Sources */,
+				7A612B102C07277B00983E93 /* ButtonView.swift in Sources */,
 				7AEE6BE02BFB79F400A88715 /* MovieListModel.swift in Sources */,
 				7A4FA21A2BF772D40045F8DA /* StatusResponse.swift in Sources */,
 				7A4FA2162BF759B80045F8DA /* NetworkCall.swift in Sources */,
@@ -438,11 +456,13 @@
 				7AC0080E2BF7315700FF539D /* Search.swift in Sources */,
 				7A3125E02BFCDCD5004D892B /* Header.swift in Sources */,
 				7AC0080C2BF7314900FF539D /* Home.swift in Sources */,
+				7A612B142C07376500983E93 /* PersonView.swift in Sources */,
 				7A70D07C2BFF1118003E10B1 /* LoginBackgroundImage.swift in Sources */,
 				7A8210492C05DF7100C7A924 /* CastData.swift in Sources */,
 				7AC007E12BF7306D00FF539D /* CinemoApp.swift in Sources */,
 				7A0E38462BFCD96D00238D2F /* TopMoviePicks.swift in Sources */,
 				7AEE6BDC2BFB6CE600A88715 /* MovieDatabase.swift in Sources */,
+				7AFCB3442C0706CB00199C5F /* CapsuleView.swift in Sources */,
 				7A0E38482BFCDA6400238D2F /* FeaturedMovie.swift in Sources */,
 				7A8210432C05B42F00C7A924 /* MovieDetailsModel.swift in Sources */,
 				7ADE6CE12C00698B008AACE9 /* SearchTabView.swift in Sources */,
