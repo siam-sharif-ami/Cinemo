@@ -11,7 +11,7 @@ import Foundation
 class SearchViewModel{
     let networkCall: NetworkCall
     
-    var SearchData: MovieDatabase?
+    var SearchData: SearchDatabase?
     
     init(networkCall: NetworkCall = NetworkCall()) {
         self.networkCall = networkCall

@@ -34,7 +34,7 @@ class NetworkCall{
         }
         
     }
-    func fetchSearchData(searchedString: String) async throws -> MovieDatabase{
+    func fetchSearchData(searchedString: String) async throws -> SearchDatabase{
         let endPoint = "https://yts.mx/api/v2/list_movies.json?query_term=\(searchedString)"
         
         print(endPoint)
@@ -51,7 +51,7 @@ class NetworkCall{
         
         do{
             let decoder = JSONDecoder()
-            let decodedData = try decoder.decode(MovieDatabase.self, from: data)
+            let decodedData = try decoder.decode(SearchDatabase.self, from: data)
             return decodedData
             
         }catch{
