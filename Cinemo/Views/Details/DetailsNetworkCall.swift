@@ -9,9 +9,9 @@ import Foundation
 
 class DetailsNetworkCall {
     
-    func fetchMovieDetails(movieID id: Int) async throws  -> MovieDetailsDatabase {
+    func fetchMovieDetails(findMovie movie: MovieListModel) async throws  -> DetailsData {
         
-        let endPoint = "https://yts.mx/api/v2/movie_details.json?movie_id=\(id)&with_cast=true"
+        let endPoint = "https://yts.mx/api/v2/movie_details.json?movie_id=\(movie.id)&with_cast=true"
         
         print(endPoint)
         guard let url = URL(string: endPoint) else {
@@ -25,10 +25,11 @@ class DetailsNetworkCall {
             throw fetchMovieError.invalidResponse
         }
         print(response.statusCode)
+        print(data)
         
         do {
             let decoder = JSONDecoder()
-            let decodedData = try decoder.decode(MovieDetailsDatabase.self, from: data)
+            let decodedData = try decoder.decode(DetailsData.self, from: data)
             print(decodedData)
             return decodedData
         } catch {

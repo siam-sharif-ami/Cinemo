@@ -10,15 +10,13 @@ import SwiftUI
 struct Search: View {
     @State var searchedString: String = ""
     @State var searchViewModel = SearchViewModel()
-    @State private var searchedMovies = MovieListModel.examples()
+    @State private var searchedMovies = SearchListModel.examples()
     @State private var searchTask: Task<Void, Never>?
     
     var body: some View {
         
         ZStack{
-            
-            Color(.black)
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
             
             VStack(alignment: .leading){
                 HStack{
@@ -57,7 +55,7 @@ struct Search: View {
                     .cornerRadius(20)
                 
                 
-                ScrollView{
+                ScrollView(.vertical,showsIndicators: false){
                     if  !searchedString.isEmpty &&  searchViewModel.SearchData != nil {
                         LazyVStack{
                             if let movie = searchViewModel.SearchData?.data.movies{

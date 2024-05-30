@@ -10,6 +10,8 @@ import SwiftUI
 struct ButtonView: View {
     let action: () -> Void
     let buttonText: String
+    @EnvironmentObject var watchListViewModel: WatchListViewModel
+    
     
     var body: some View {
         Button(action: {}){
