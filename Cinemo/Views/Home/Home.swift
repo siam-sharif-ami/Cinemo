@@ -29,7 +29,7 @@ struct Home: View {
                                     TabView{
                                         if let movie = viewModel.movieDatabase?.data.movies {
                                             ForEach(movie){ phase in
-                                                NavigationLink(destination: DetailsView(id: phase.id)){
+                                                NavigationLink(destination: DetailsView(movieComing: phase)){
                                                     FeaturedMovie(movies: phase)
                                                 }
                                             }

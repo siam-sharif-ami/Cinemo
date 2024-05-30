@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PersonView: View {
-    var movie: MovieDetailsModel = MovieDetailsModel.example1()
+    var movie: MovieListModel = MovieListModel.example1()
     
     var body: some View {
         

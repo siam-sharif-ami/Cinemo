@@ -9,9 +9,9 @@ import SwiftUI
 
 struct DetailsView: View {
     @State var selectedTab: String = "Cast"
-    @State var id: Int
     @State var viewModel = DetailsViewModel()
-    @State var moviePlaceholder = MovieDetailsModel.example1()
+    @State var movieComing: MovieListModel
+    @State var moviePlaceholder:DetailsData = DetailsData.example1()
     @State var viewModelLoaded = false
     
     var body: some View {
@@ -22,7 +22,7 @@ struct DetailsView: View {
                         VStack(alignment: .leading){
                             TabView{
                                 
-                                AsyncImage(url: URL(string: moviePlaceholder.medium_cover_image)){ phase in
+                                AsyncImage(url: URL(string: moviePlaceholder.data.movie.medium_cover_image)){ phase in
                                     if let image = phase.image{
                                         image
                                             .resizable()
@@ -38,7 +38,7 @@ struct DetailsView: View {
                             
                             HStack{
                                 
-                                ForEach( moviePlaceholder.genres , id:\.self ){ genre in
+                                ForEach( moviePlaceholder.data.movie.genres , id:\.self ){ genre in
                                     Text("\(genre)")
                                         .font(.subheadline)
                                 }
@@ -47,22 +47,22 @@ struct DetailsView: View {
                             .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                             
                             
-                            Text(moviePlaceholder.title)
+                            Text(moviePlaceholder.data.movie.title)
                                 .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                 .fontWeight(.bold)
                             
                             HStack{
-                                CapsuleView(text: "PG-\(moviePlaceholder.mpa_rating)")
+                                CapsuleView(text: "PG-\(moviePlaceholder.data.movie.mpa_rating)")
                                     .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                                     .font(.footnote)
-                                CapsuleView(text: "\(moviePlaceholder.year)")
+                                CapsuleView(text: "\(moviePlaceholder.data.movie.year)")
                                     .font(.footnote)
-                                CapsuleView(text: viewModel.runtimeFormat(moviePlaceholder.runtime))
+                                CapsuleView(text: viewModel.runtimeFormat(moviePlaceholder.data.movie.runtime))
                                     .font(.footnote)
                             }
                             
-                            Text(moviePlaceholder.description_full)
+                            Text(moviePlaceholder.data.movie.description_full)
                                 .padding()
                                 .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                                 .lineLimit(3)
@@ -84,11 +84,11 @@ struct DetailsView: View {
                             
                             HStack{
                                 if selectedTab == "Cast"{
-                                    PersonView(movie: moviePlaceholder)
+                                    PersonView(movie: moviePlaceholder.data.movie)
                                 }else if selectedTab == "Writer" {
-                                    PersonView(movie: moviePlaceholder)
+                                    PersonView(movie: moviePlaceholder.data.movie)
                                 }else if selectedTab == "Director" {
-                                    PersonView(movie: moviePlaceholder)
+                                    PersonView(movie: moviePlaceholder.data.movie)
                                 }
                             }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                         }
@@ -97,9 +97,9 @@ struct DetailsView: View {
             }
             .onAppear(){
                 Task{
-                    await viewModel.fetchMovieDetails(movieID: id )
+                    await viewModel.fetchMovieDetails(findMovie: movieComing)
                     viewModelLoaded = true
-                    moviePlaceholder = viewModel.movieDetailsDatabase?.data.movie ?? MovieDetailsModel.example1()
+                    moviePlaceholder = viewModel.movieDetailsDatabase ?? DetailsData.example1()
                 }
             }
         }.navigationTitle("Movie Details")
@@ -108,5 +108,5 @@ struct DetailsView: View {
 }
 
 #Preview {
-    DetailsView(id: 10)
+    DetailsView(movieComing: MovieListModel.example1(), moviePlaceholder: DetailsData.example1())
 }

@@ -5,16 +5,17 @@ import Foundation
 class DetailsViewModel {
     
     let detailsNetworkCall : DetailsNetworkCall
-    var movieDetailsDatabase: MovieDetailsDatabase?
+    var movieDetailsDatabase: DetailsData?
     
     init(detailsNetworkCall: DetailsNetworkCall = DetailsNetworkCall()){
         self.detailsNetworkCall = detailsNetworkCall
     }
     
     @MainActor
-    func fetchMovieDetails(movieID id: Int) async {
+    func fetchMovieDetails(findMovie movie: MovieListModel) async {
         do {
-            movieDetailsDatabase = try await detailsNetworkCall.fetchMovieDetails(movieID: id)
+            
+            movieDetailsDatabase = try await detailsNetworkCall.fetchMovieDetails(findMovie: movie)
         }
         catch{
             print("problem in fetching movie details ")
