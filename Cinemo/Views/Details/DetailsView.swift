@@ -15,9 +15,18 @@ struct DetailsView: View {
     @State var viewModelLoaded = false
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                Color.black.ignoresSafeArea()
+        
+        ZStack{
+            
+            Color.black.ignoresSafeArea()
+            
+            VStack{
+                
+                Text("Movie Details")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                
                 let shimmerView = ScrollView(.vertical, showsIndicators: false ){
                     VStack(alignment: .leading){
                         TabView{
@@ -109,15 +118,15 @@ struct DetailsView: View {
                     
                 }
             }
-            .onAppear(){
-                Task{
-                    await viewModel.fetchMovieDetails(findMovie: movieComing)
-                    viewModelLoaded = true
-                    moviePlaceholder = viewModel.movieDetailsDatabase ?? DetailsData.example1()
-                }
+        }
+
+        .onAppear(){
+            Task{
+                await viewModel.fetchMovieDetails(findMovie: movieComing)
+                viewModelLoaded = true
+                moviePlaceholder = viewModel.movieDetailsDatabase ?? DetailsData.example1()
             }
-        }.navigationTitle("Movie Details")
-            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

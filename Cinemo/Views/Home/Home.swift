@@ -21,7 +21,7 @@ struct Home: View {
                 
                 ScrollView(showsIndicators: false){
                     let fullView = VStack(alignment: .leading ){
-                        
+    
                         ZStack{
                             VStack(alignment: .leading){
                                 Header(title: "Welcome Back", user: "Siam Sharif Ami")
@@ -30,6 +30,7 @@ struct Home: View {
                                     TabView{
                                         ForEach(moviesList){ phase in
                                             NavigationLink(destination: DetailsView(movieComing: phase)){
+                                                        
                                                 FeaturedMovie(movies: phase)
                                             }
                                         }

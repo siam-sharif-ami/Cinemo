@@ -12,7 +12,6 @@ struct NavigationBottom: View {
     init() {
             // Customize the appearance of the UITabBar
             UITabBar.appearance().barTintColor = .black
-            UITabBar.appearance().tintColor = .white
         }
     var body: some View {
         ZStack{
