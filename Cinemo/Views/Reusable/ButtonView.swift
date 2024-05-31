@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ButtonView: View {
-    let action: () -> Void
-    let buttonText: String
+    var buttonText: String
     @EnvironmentObject var watchListViewModel: WatchListViewModel
-    
+    var movie: MovieListModel
+    @State private var showAlert = false
     
     var body: some View {
-        Button(action: {}){
+        Button(action: {
+            watchListViewModel.onAdd(add: movie)
+            showAlert = true
+        }){
             Text("Add to Watchlist")
                 .foregroundColor(.white)
                 .frame(maxWidth : .infinity)
@@ -26,11 +29,17 @@ struct ButtonView: View {
                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                 )
         }
+        .alert(isPresented: $showAlert, content: {
+            Alert(
+                title: Text("Success"),
+                message: Text("Movie added to Watchlist"),
+                dismissButton: .default(Text("OK"))
+            )
+        })
     }
 }
 
 #Preview {
-    ButtonView(action: {
-        print("button tapped")
-    }, buttonText: "Siam")
+    ButtonView(buttonText: "Siam", movie: MovieListModel.example1())
+        .environmentObject(WatchListViewModel())
 }

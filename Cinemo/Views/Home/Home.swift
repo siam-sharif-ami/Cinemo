@@ -10,121 +10,111 @@ import Shimmer
 
 struct Home: View {
     
-    @State private var movies = MovieListModel.examples()
+    @State private var moviesList = MovieListModel.examples()
     @State private var viewModel = ViewModel()
     @State private var loaded = false
     
     var body: some View {
         NavigationView{
-            ScrollView(showsIndicators: false){
-                VStack(alignment: .leading ){
-                    
-                    /// Featured View
-                    ///
-                    ZStack{
-                        VStack(alignment: .leading){
-                            Header(title: "Welcome Back", user: "Siam Sharif Ami")
-                            HStack{
-                                if loaded == true {
+            
+            ZStack{
+                
+                ScrollView(showsIndicators: false){
+                    let fullView = VStack(alignment: .leading ){
+                        
+                        ZStack{
+                            VStack(alignment: .leading){
+                                Header(title: "Welcome Back", user: "Siam Sharif Ami")
+                                HStack{
+                                    
                                     TabView{
-                                        if let movie = viewModel.movieDatabase?.data.movies {
-                                            ForEach(movie){ phase in
-                                                NavigationLink(destination: DetailsView(movieComing: phase)){
-                                                    FeaturedMovie(movies: phase)
-                                                }
+                                        ForEach(moviesList){ phase in
+                                            NavigationLink(destination: DetailsView(movieComing: phase)){
+                                                FeaturedMovie(movies: phase)
                                             }
                                         }
+                                        
                                     }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                                         .frame(height: 220)
-                                }else {
-                                    FeaturedMovie(movies: MovieListModel.example1())
-                                        .redacted(reason: /*@START_MENU_TOKEN@*/.placeholder/*@END_MENU_TOKEN@*/)
-                                        .shimmering()
+                                    
                                 }
                             }
-                        }
+                            
+                        }.padding(10)
                         
-                    }.padding(10)
-                    
-                    
-                    /// Featured View
-                    
-                    HStack{
-                        Text("Top Movie Picks")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .font(.title2)
-                        Spacer()
-                        Text("See all")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
-                        .foregroundColor(.white)
-                    
-                    
-                    /// Top Movie Picks view
-                    ///
-                    ///
-                    let topMovieScroll = ScrollView(.horizontal, showsIndicators: false){
+                        
                         HStack{
-                            ForEach(viewModel.movieDatabase?.data.movies ?? movies) { phase in
-                                TopMoviePicks(movies: phase)
+                            Text("Top Movie Picks")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .font(.title2)
+                            Spacer()
+                            Text("See all")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
+                            .foregroundColor(.white)
+                        
+                        ///
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                
+                                ForEach( moviesList) { phase in
+                                    NavigationLink(destination: DetailsView(movieComing: phase)){
+                                        TopMoviePicks(movies: phase)
+                                    }
+                                }
                             }
-                        }
-                    }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                        
+                        HStack{
+                            Text("Upcoming Movies")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .font(.title2)
+                            Spacer()
+                            Text("See all")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
+                            .foregroundColor(.white)
+                        
+                        
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                
+                                ForEach( moviesList ){ phase in
+                                    NavigationLink(destination: DetailsView(movieComing: phase)){
+                                        UpcomingMovie(movies: phase)
+                                    }
+                                }
+                            }
+                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                        
+                    }
                     
                     if loaded == true {
-                        topMovieScroll
-                    }else {
-                        topMovieScroll
-                            .redacted(reason: .placeholder)
-                            .shimmering()
+                        fullView
                     }
-                    
-                    
-                    /// Top Movie picks view
-                    /// upcoming movie view
-                    HStack{
-                        Text("Upcoming Movies")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .font(.title2)
-                        Spacer()
-                        Text("See all")
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
-                        .foregroundColor(.white)
-                    
-                    
-                    let upcomingScroll = ScrollView(.horizontal, showsIndicators: false){
-                        HStack{
-                            ForEach(viewModel.movieDatabase?.data.movies ?? movies ){ phase in
-                                UpcomingMovie(movies: phase)
-                            }
-                        }
-                    }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                    
-                    if loaded == true {
-                        upcomingScroll
-                    }else{
-                        upcomingScroll
-                            .redacted(reason: /*@START_MENU_TOKEN@*/.placeholder/*@END_MENU_TOKEN@*/)
-                            .shimmering()
+                    else {
+                        fullView.redacted(reason: .placeholder).shimmering()
                     }
-                    /// upcoming movie picks view
-                    
-                }
-                //end of scrollview
-            }.background(Color.black)
-                .onAppear(){
-                    Task{
-                        await viewModel.fetchMovieData()
-                        loaded = true
-                    }
-                }
+                }.background(Color.black)
+            }
+            
+            
+            
+            
+        }
+        .onAppear(){
+            Task{
+                await viewModel.fetchMovieData()
+                loaded = true
+                moviesList = viewModel.movieDatabase?.data.movies ?? MovieListModel.examples()
+            }
         }
     }
 }
 
 #Preview {
     Home()
+        .environmentObject(WatchListViewModel())
 }
 
 

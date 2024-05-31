@@ -65,7 +65,7 @@ struct MovieListModel: Identifiable, Codable{
         }
         
         static func example1() -> MovieListModel {
-            MovieListModel(id: 1, title: "Golden Kamuy", genres: [
+            MovieListModel(id: 10, title: "Golden Kamuy", genres: [
                 "Action",
                 "Adventure",
                 "History",

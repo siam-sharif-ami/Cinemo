@@ -9,8 +9,7 @@ import SwiftUI
 
 struct WatchCardView: View {
     
-    @State var id: Int
-    @State var watchListViewModel = WatchListViewModel()
+    var movie: MovieListModel = MovieListModel.example1()
     
     var body: some View {
         
@@ -21,7 +20,7 @@ struct WatchCardView: View {
                 .foregroundColor(Color.black.opacity(0.7))
                 .shadow(radius: 5)
             HStack{
-                AsyncImage(url: URL(string: watchListViewModel.watchList[id].medium_cover_image)){ phase in
+                AsyncImage(url: URL(string: movie.medium_cover_image)){ phase in
                     
                     if let image = phase.image{
                         image
@@ -35,29 +34,30 @@ struct WatchCardView: View {
                 
                 VStack( alignment: .leading ){
                     HStack{
-                        ForEach(watchListViewModel.watchList[id].genres, id: \.self ){ genre in
+                        ForEach(movie.genres, id: \.self ){ genre in
                             Text("\(genre)")
                                 .font(.system(size: 10))
                                 .foregroundColor(.white)
                             
                         }
                     }
-                    Text("\(watchListViewModel.watchList[id].title)")
+                    Text("\(movie.title)")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title2)
                         .foregroundColor(.white)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     
                     HStack{
-                        CapsuleView(text: "PG- \(watchListViewModel.watchList[id].mpa_rating)")
-                            .font(.footnote)
+                        CapsuleView(text: "PG- \(movie.mpa_rating)")
+                            
                             .foregroundColor(.white)
-                        CapsuleView(text:"\(watchListViewModel.watchList[id].year)")
+                        CapsuleView(text:"\(movie.year)")
                             .foregroundColor(.white)
-                            .font(.footnote)
-                        CapsuleView(text: "\(watchListViewModel.runtimeFormat(watchListViewModel.watchList[id].runtime))")
+                            
+                        CapsuleView(text: "\(movie.runtime/60)h \(movie.runtime%60)m ")
                             .foregroundColor(.white)
-                            .font(.footnote)
-                    }
+                            
+                    }.font(.system(size: 12))
                     
                     Spacer()
                     HStack{
@@ -65,7 +65,7 @@ struct WatchCardView: View {
                             .foregroundColor(.yellow)
                             
                             
-                        Text(String(format: "%.1f",watchListViewModel.watchList[id].rating))
+                        Text(String(format: "%.1f",movie.rating))
                             .font(.footnote)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
@@ -80,10 +80,10 @@ struct WatchCardView: View {
                 }.padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
                 
             }.frame(width: .infinity, height: 180)
-        }.padding()
+        }
     }
 }
 
 #Preview {
-    WatchCardView(id: 1)
+    WatchCardView()
 }

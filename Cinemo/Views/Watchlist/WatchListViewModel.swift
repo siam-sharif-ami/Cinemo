@@ -8,9 +8,9 @@
 import Foundation
 
 @Observable
-class WatchListViewModel : ObservableObject {
+class WatchListViewModel: ObservableObject{
     
-    var watchList: [WatchListModel] = []{
+    var watchList: [MovieListModel] = []{
         didSet{
             saveItems()
         }
@@ -25,15 +25,22 @@ class WatchListViewModel : ObservableObject {
     func getItems(){
         guard 
             let data = UserDefaults.standard.data(forKey: itemsKey),
-            let savedItems = try? JSONDecoder().decode([WatchListModel].self, from: data)
+            let savedItems = try? JSONDecoder().decode([MovieListModel].self, from: data)
         else { return }
+        
+        self.watchList = savedItems
     }
     
     func runtimeFormat(_ runtime: Int ) -> String {
         return "\(runtime/60)h \(runtime%60)m"
     }
-    func add(id:Int ){
-        
+    func onDelete(indexSet: IndexSet){
+        watchList.remove(atOffsets: indexSet)
+    }
+    func onAdd(add movie: MovieListModel){
+        if !watchList.contains(where: {$0.id == movie.id }){
+            watchList.append(movie)
+        }
     }
     
     func saveItems() {

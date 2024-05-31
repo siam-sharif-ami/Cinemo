@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CinemoApp: App {
+    
+    @StateObject var watchListViewModel:WatchListViewModel = WatchListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(watchListViewModel)
         }
     }
 }

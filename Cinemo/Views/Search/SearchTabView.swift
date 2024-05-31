@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchTabView: View {
     
-    var search: SearchListModel
+    var search: MovieListModel
     var body: some View {
         
         ZStack(alignment: .leading){
@@ -81,5 +81,5 @@ struct SearchTabView: View {
 }
 
 #Preview {
-    SearchTabView(search: SearchListModel.example1())
+    SearchTabView(search: MovieListModel.example1())
 }
