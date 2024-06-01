@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct NavigationBottom: View {
+    
+    init() {
+            // Customize the appearance of the UITabBar
+            UITabBar.appearance().barTintColor = .black
+        }
     var body: some View {
         ZStack{
-            Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
             TabView{
                 Home()
@@ -21,7 +25,7 @@ struct NavigationBottom: View {
                     .tabItem{
                         Image(systemName: "magnifyingglass")
                     }
-                Menu()
+                WatchlistView()
                     .tabItem {
                         Image(systemName: "slider.horizontal.3")
                     }
@@ -29,12 +33,13 @@ struct NavigationBottom: View {
                     .tabItem {
                         Image(systemName: "gear")
                     }
-            }.accentColor(.white)
-                .background(Color.black)
+            } // Set the text color of tab labels
+                
         }
     }
 }
 
 #Preview {
     NavigationBottom()
+        .environmentObject(WatchListViewModel())
 }

@@ -9,10 +9,15 @@ import SwiftUI
 
 struct Settings: View {
     var body: some View {
-        Text("Settings")
+        ZStack{
+            Color.black.ignoresSafeArea()
+            Text("Settings")
+                .foregroundColor(.white)
+        }
     }
 }
 
 #Preview {
     Settings()
+        .environmentObject(WatchListViewModel())
 }

@@ -10,8 +10,9 @@ import SwiftUI
 struct Search: View {
     @State var searchedString: String = ""
     @State var searchViewModel = SearchViewModel()
-    @State private var searchedMovies = SearchListModel.examples()
+    @State private var searchedMovies = MovieListModel.examples()
     @State private var searchTask: Task<Void, Never>?
+    @State private var loaded:Bool = false
     
     var body: some View {
         
@@ -39,43 +40,52 @@ struct Search: View {
                         .autocorrectionDisabled(true)
                         .onChange(of: searchedString){
                             newValue in
-                            
                             searchTask?.cancel()
+                            loaded = false
                             searchViewModel.clearSearchData()
                             Task.init {
-                                try? await Task.sleep(nanoseconds: 1000000000)
+                                try? await Task.sleep(nanoseconds: 500000000)
                                 if !Task.isCancelled{
                                     await searchViewModel.fetchSearchData(search: newValue)
+                                    loaded = true
+                                    searchedMovies = searchViewModel.SearchData?.data.movies ?? MovieListModel.examples()
                                 }
                             }
                         }
                 }.foregroundColor(.white)
-                .padding()
+                    .padding()
                     .background(Color(.systemGray))
                     .cornerRadius(20)
                 
                 
                 ScrollView(.vertical,showsIndicators: false){
-                    if  !searchedString.isEmpty &&  searchViewModel.SearchData != nil {
-                        LazyVStack{
-                            if let movie = searchViewModel.SearchData?.data.movies{
-                                
-                                ForEach(movie){ phase in
+                    if loaded == false && !searchedString.isEmpty{
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: (.pink)))
+                            
+                    }else {
+                        if  !searchedString.isEmpty &&  searchViewModel.SearchData != nil {
+                            LazyVStack{
+                                ForEach( searchedMovies ){ phase in
                                     SearchTabView(search: phase)
                                     
                                 }
                             }
                             
+                        }else {
+                            Text("No Matches Found")
+                                .font(.subheadline)
+                                .foregroundColor(.white)
                         }
-                    }else {
-                        Text("No Matches Found")
-                            .font(.subheadline)
-                            .foregroundColor(.white)
                     }
-                }.padding()
+                    
+                    
+                }
+                
+                
+                
             }
             
-            //Text("Previous Search")
             .font(.footnote)
             .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
         }
@@ -85,4 +95,5 @@ struct Search: View {
 
 #Preview {
     Search()
+        .environmentObject(WatchListViewModel())
 }
