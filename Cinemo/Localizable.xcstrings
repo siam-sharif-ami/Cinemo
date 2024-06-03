@@ -1,7 +1,351 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
 
+    },
+    "%lld" : {
+
+    },
+    "%lldh %lldm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Add to Watchlist" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ওয়াচলিস্টে যোগ করুন"
+          }
+        }
+      }
+    },
+    "Ami" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অমি"
+          }
+        }
+      }
+    },
+    "Cast" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কাস্ট"
+          }
+        }
+      }
+    },
+    "Cinemo" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সিনেমা"
+          }
+        }
+      }
+    },
+    "Director" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "পরিচালক"
+          }
+        }
+      }
+    },
+    "Don't have an account?" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অ্যাকাউন্ট নেই?"
+          }
+        }
+      }
+    },
+    "Example Value" : {
+
+    },
+    "Get Started" : {
+
+    },
+    "Hello world" : {
+
+    },
+    "Login" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "প্রবেশ করুন\n"
+          }
+        }
+      }
+    },
+    "Movie added to Watchlist" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মুভি ওয়াচলিস্টে যোগ করা হয়েছে\n"
+          }
+        }
+      }
+    },
+    "Movie Details" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "মুভির বিবরণ"
+          }
+        }
+      }
+    },
+    "No Matches Found" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "কোন মিল পাওয়া যায়নি"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ঠিক আছে\n"
+          }
+        }
+      }
+    },
+    "password" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "পাসওয়ার্ড"
+          }
+        }
+      }
+    },
+    "PG %@" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "পিজি%@"
+          }
+        }
+      }
+    },
+    "Please sign in to your account" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার অ্যাকাউন্টে সাইন ইন করুন"
+          }
+        }
+      }
+    },
+    "Search." : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\nঅনুসন্ধান করুন."
+          }
+        }
+      }
+    },
+    "Search..." : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অনুসন্ধান করুন."
+          }
+        }
+      }
+    },
+    "See all" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সব দেখুন"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সেটিংস"
+          }
+        }
+      }
+    },
+    "siam sharif" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সিয়াম শরীফ"
+          }
+        }
+      }
+    },
+    "Siam Sharif Ami" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সিয়াম শরীফ অমি"
+          }
+        }
+      }
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "নিবন্ধন করুন"
+          }
+        }
+      }
+    },
+    "Success" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "সফল"
+          }
+        }
+      }
+    },
+    "Take your popcorn and be sitted" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার পপকর্ন নিন এবং অনুগ্রহ করে বসুন"
+          }
+        }
+      }
+    },
+    "Top Movie Picks" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "শীর্ষ মুভি বাছাই"
+          }
+        }
+      }
+    },
+    "Upcoming Movies" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আসন্ন সিনেমা"
+          }
+        }
+      }
+    },
+    "username or email" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ব্যবহারকারী নাম বা ইমেল"
+          }
+        }
+      }
+    },
+    "Watch your favorite movie or series" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "আপনার প্রিয় সিনেমা বা সিরিজ দেখুন"
+          }
+        }
+      }
+    },
+    "WatchList" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ওয়াচলিস্ট"
+          }
+        }
+      }
+    },
+    "Welcome Back" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "স্বাগতম!"
+          }
+        }
+      }
+    },
+    "Welcome Back!" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "স্বাগতম!"
+          }
+        }
+      }
+    },
+    "Welcome to the show" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "শোতে স্বাগতম"
+          }
+        }
+      }
+    },
+    "Writer" : {
+      "localizations" : {
+        "bn-BD" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "লেখক"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

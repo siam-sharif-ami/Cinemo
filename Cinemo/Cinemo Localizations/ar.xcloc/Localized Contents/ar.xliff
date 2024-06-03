@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Cinemo/Cinemo-InfoPlist.xcstrings" source-language="en" target-language="ar" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.4" build-num="15F31d"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Cinemo</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Cinemo/Localizable.xcstrings" source-language="en" target-language="ar" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.4" build-num="15F31d"/>
+    </header>
+    <body>
+      <trans-unit id="%@" xml:space="preserve">
+        <source>%@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%lld" xml:space="preserve">
+        <source>%lld</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%lldh %lldm" xml:space="preserve">
+        <source>%1$lldh %2$lldm</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Add to Watchlist" xml:space="preserve">
+        <source>Add to Watchlist</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Ami" xml:space="preserve">
+        <source>Ami</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Cast" xml:space="preserve">
+        <source>Cast</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Cinemo" xml:space="preserve">
+        <source>Cinemo</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Director" xml:space="preserve">
+        <source>Director</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Don't have an account?" xml:space="preserve">
+        <source>Don't have an account?</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Example Value" xml:space="preserve">
+        <source>Example Value</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Get Started" xml:space="preserve">
+        <source>Get Started</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hello world" xml:space="preserve">
+        <source>Hello world</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Login" xml:space="preserve">
+        <source>Login</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Movie Details" xml:space="preserve">
+        <source>Movie Details</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Movie added to Watchlist" xml:space="preserve">
+        <source>Movie added to Watchlist</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="No Matches Found" xml:space="preserve">
+        <source>No Matches Found</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="OK" xml:space="preserve">
+        <source>OK</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="PG %@" xml:space="preserve">
+        <source>PG %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Please sign in to your account" xml:space="preserve">
+        <source>Please sign in to your account</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Search." xml:space="preserve">
+        <source>Search.</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Search..." xml:space="preserve">
+        <source>Search...</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="See all" xml:space="preserve">
+        <source>See all</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Settings" xml:space="preserve">
+        <source>Settings</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Sign Up" xml:space="preserve">
+        <source>Sign Up</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Success" xml:space="preserve">
+        <source>Success</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Take your popcorn and be sitted" xml:space="preserve">
+        <source>Take your popcorn and be sitted</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Top Movie Picks" xml:space="preserve">
+        <source>Top Movie Picks</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Upcoming Movies" xml:space="preserve">
+        <source>Upcoming Movies</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Watch your favorite movie or series" xml:space="preserve">
+        <source>Watch your favorite movie or series</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="WatchList" xml:space="preserve">
+        <source>WatchList</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Welcome Back!" xml:space="preserve">
+        <source>Welcome Back!</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Welcome to the show" xml:space="preserve">
+        <source>Welcome to the show</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Writer" xml:space="preserve">
+        <source>Writer</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="password" xml:space="preserve">
+        <source>password</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="siam sharif" xml:space="preserve">
+        <source>siam sharif</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="username or email" xml:space="preserve">
+        <source>username or email</source>
+        <note/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

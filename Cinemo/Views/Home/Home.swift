@@ -24,7 +24,20 @@ struct Home: View {
     
                         ZStack{
                             VStack(alignment: .leading){
-                                Header(title: "Welcome Back", user: "Siam Sharif Ami")
+                                
+                                VStack(alignment: .leading){
+                                    Text("Welcome Back")
+                                        .foregroundColor(.white)
+                                        .frame(width: .infinity, height: 20)
+                                    
+                                    Text("Siam Sharif Ami")
+                                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                        .font(.title2)
+                                        .foregroundColor(.white)
+                                        .frame(width: .infinity, height: 20)
+                                        
+                                }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0))
+                                
                                 HStack{
                                     
                                     TabView{
@@ -114,8 +127,11 @@ struct Home: View {
 }
 
 #Preview {
-    Home()
-        .environmentObject(WatchListViewModel())
+    Group{
+        Home()
+            .environmentObject(WatchListViewModel())
+            .environment(\.locale, Locale.init(identifier: "en"))
+    }
 }
 
 

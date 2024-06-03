@@ -1,0 +1,121 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lldh %lldm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Add to Watchlist" : {
+
+    },
+    "Ami" : {
+
+    },
+    "Cast" : {
+
+    },
+    "Cinemo" : {
+
+    },
+    "Director" : {
+
+    },
+    "Don't have an account?" : {
+
+    },
+    "Example Value" : {
+
+    },
+    "Get Started" : {
+
+    },
+    "Hello world" : {
+
+    },
+    "Login" : {
+
+    },
+    "Movie added to Watchlist" : {
+
+    },
+    "Movie Details" : {
+
+    },
+    "No Matches Found" : {
+
+    },
+    "OK" : {
+
+    },
+    "password" : {
+
+    },
+    "PG %@" : {
+
+    },
+    "Please sign in to your account" : {
+
+    },
+    "Search." : {
+
+    },
+    "Search..." : {
+
+    },
+    "See all" : {
+
+    },
+    "Settings" : {
+
+    },
+    "siam sharif" : {
+
+    },
+    "Sign Up" : {
+
+    },
+    "Success" : {
+
+    },
+    "Take your popcorn and be sitted" : {
+
+    },
+    "Top Movie Picks" : {
+
+    },
+    "Upcoming Movies" : {
+
+    },
+    "username or email" : {
+
+    },
+    "Watch your favorite movie or series" : {
+
+    },
+    "WatchList" : {
+
+    },
+    "Welcome Back!" : {
+
+    },
+    "Welcome to the show" : {
+
+    },
+    "Writer" : {
+
+    }
+  },
+  "version" : "1.0"
+}

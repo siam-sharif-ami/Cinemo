@@ -35,9 +35,12 @@ struct WatchCardView: View {
                 VStack( alignment: .leading ){
                     HStack{
                         ForEach(movie.genres, id: \.self ){ genre in
+                            
                             Text("\(genre)")
                                 .font(.system(size: 10))
                                 .foregroundColor(.white)
+                                .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                                .lineLimit(1)
                             
                         }
                     }
