@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Search: View {
     @State var searchedString: String = ""
-    @State var searchViewModel = SearchViewModel()
+    @State var searchViewModel: SearchViewModel = SearchViewModel()
     @State private var searchedMovies = MovieListModel.examples()
     @State private var searchTask: Task<Void, Never>?
     @State private var loaded:Bool = false
@@ -43,13 +43,12 @@ struct Search: View {
                                 newValue in
                                 searchTask?.cancel()
                                 loaded = false
-                                searchViewModel.clearSearchData()
+                                
                                 Task.init {
-                                    try? await Task.sleep(nanoseconds: 500000000)
+                                    try? await Task.sleep(nanoseconds: 1000000000)
                                     if !Task.isCancelled{
-                                        await searchViewModel.fetchSearchData(search: newValue)
+                                        searchViewModel.fetchSearchData(searchedString: newValue)
                                         loaded = true
-                                        searchedMovies = searchViewModel.SearchData?.data.movies ?? MovieListModel.examples()
                                     }
                                 }
                             }
@@ -81,16 +80,18 @@ struct Search: View {
                                     .foregroundColor(.white)
                             }
                         }
-                        
-                        
                     }
-                    
-                    
-                    
                 }
                 
                 .font(.footnote)
                 .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
+            }
+        }.onReceive(searchViewModel.$SearchData) { newSearchData in
+            loaded = true
+            if let movies = newSearchData?.data.movies {
+                searchedMovies = movies
+            } else {
+                searchedMovies = MovieListModel.examples()
             }
         }
     }

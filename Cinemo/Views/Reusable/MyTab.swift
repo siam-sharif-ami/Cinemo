@@ -11,7 +11,7 @@ struct MyTab: View {
     @State private var selectedTab = 0
     let tabs: [MovieListModel]
     let indicatorHeight: CGFloat = 5
-    let indicatorWidth: CGFloat = 2
+    let indicatorWidth: CGFloat = 1
     let indicatorColor = Color.blue // Customize indicator color
     
     var body: some View {
@@ -40,7 +40,8 @@ struct MyTab: View {
                                     .frame(width: 10, height: 5)
                             }
                         }
-                    }.frame(width: indicatorWidth ,height: indicatorHeight)
+                    }
+                    .frame(width: 50 ,height: indicatorHeight)
                     .padding(.top, 180)
                     
                 }

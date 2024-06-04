@@ -20,6 +20,8 @@
 		7A70D0802BFF35FA003E10B1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70D07F2BFF35FA003E10B1 /* LoginPage.swift */; };
 		7A7F7B9C2C0ED5650067B355 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F7B9B2C0ED5650067B355 /* Rating.swift */; };
 		7A7F7BA02C0EE5720067B355 /* FeaturedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F7B9F2C0EE5720067B355 /* FeaturedOverlay.swift */; };
+		7A7F7BA72C0F0D810067B355 /* MovieRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F7BA62C0F0D810067B355 /* MovieRepositoryProtocol.swift */; };
+		7A7F7BA92C0F11330067B355 /* NetworkMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F7BA82C0F11330067B355 /* NetworkMovieRepository.swift */; };
 		7A82103B2C05B10700C7A924 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82103A2C05B10700C7A924 /* DetailsViewModel.swift */; };
 		7A8210452C05B68C00C7A924 /* DetailsNetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8210442C05B68C00C7A924 /* DetailsNetworkCall.swift */; };
 		7A8210472C05CE4E00C7A924 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8210462C05CE4E00C7A924 /* DetailsView.swift */; };
@@ -84,6 +86,8 @@
 		7A70D07F2BFF35FA003E10B1 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		7A7F7B9B2C0ED5650067B355 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		7A7F7B9F2C0EE5720067B355 /* FeaturedOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedOverlay.swift; sourceTree = "<group>"; };
+		7A7F7BA62C0F0D810067B355 /* MovieRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositoryProtocol.swift; sourceTree = "<group>"; };
+		7A7F7BA82C0F11330067B355 /* NetworkMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMovieRepository.swift; sourceTree = "<group>"; };
 		7A82103A2C05B10700C7A924 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		7A8210442C05B68C00C7A924 /* DetailsNetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsNetworkCall.swift; sourceTree = "<group>"; };
 		7A8210462C05CE4E00C7A924 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 				7A4FA2152BF759B80045F8DA /* NetworkCall.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		7A7F7BA52C0F0D6A0067B355 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7A7F7BA62C0F0D810067B355 /* MovieRepositoryProtocol.swift */,
+				7A7F7BA82C0F11330067B355 /* NetworkMovieRepository.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		7A8210332C05A6FA00C7A924 /* Search */ = {
@@ -276,6 +289,7 @@
 			children = (
 				7AB1F8F22C05A42300C4E57F /* Home */,
 				7A8210332C05A6FA00C7A924 /* Search */,
+				7A7F7BA52C0F0D6A0067B355 /* Protocol */,
 				7A8210342C05A72B00C7A924 /* Login */,
 				7A8210352C05A75E00C7A924 /* Details */,
 				7AE4FC602C089A0B005680A2 /* Watchlist */,
@@ -482,6 +496,7 @@
 				7AEE6BDA2BFB5FBE00A88715 /* ViewModel.swift in Sources */,
 				7AE4FC5F2C089A05005680A2 /* WatchlistView.swift in Sources */,
 				7AE4FC6E2C08D830005680A2 /* RepoDetails.swift in Sources */,
+				7A7F7BA92C0F11330067B355 /* NetworkMovieRepository.swift in Sources */,
 				7AB10A1A2BFEFEA3004039E6 /* RepoData.swift in Sources */,
 				7AC0080E2BF7315700FF539D /* Search.swift in Sources */,
 				7AC0080C2BF7314900FF539D /* Home.swift in Sources */,
@@ -496,6 +511,7 @@
 				7AE4FC682C089DCB005680A2 /* WatchCardView.swift in Sources */,
 				7A0E38482BFCDA6400238D2F /* FeaturedMovie.swift in Sources */,
 				7ADE6CE12C00698B008AACE9 /* SearchTabView.swift in Sources */,
+				7A7F7BA72C0F0D810067B355 /* MovieRepositoryProtocol.swift in Sources */,
 				7AE4FC662C089C1B005680A2 /* WatchListViewModel.swift in Sources */,
 				7AF084212C04914B007249A0 /* testView.swift in Sources */,
 				7A70D07E2BFF254E003E10B1 /* WelcomePage.swift in Sources */,

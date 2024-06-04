@@ -47,6 +47,7 @@ struct SearchTabView: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .font(.title2)
                         .foregroundColor(.white)
+                        .lineLimit(1)
                     
                     HStack{
                         CapsuleView(text: "PG- \(search.mpa_rating)")

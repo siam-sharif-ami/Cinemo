@@ -6,28 +6,42 @@
 //
 
 import Foundation
+import Combine
 
-@Observable
-class SearchViewModel{
-    let networkCall: NetworkCall
+class SearchViewModel: ObservableObject{
+    //    let networkCall: NetworkCall
     
-    var SearchData: MovieDatabase?
+    //    var SearchData: MovieDatabase?
+    private var cancellables = Set<AnyCancellable>()
+    @Published var SearchData: MovieDatabase?
+    var searchRepository: MovieRepositoryProtocol
     
-    init(networkCall: NetworkCall = NetworkCall()) {
-        self.networkCall = networkCall
+    init(searchRepository: MovieRepositoryProtocol = NetworkMovieRepository()) {
+        self.searchRepository = searchRepository
     }
     
-    @MainActor
-    func fetchSearchData(search: String) async {
-        do{
-            SearchData = try await networkCall.fetchSearchData(searchedString: search)
-            print(SearchData)
-        }catch {
-            print("Problem in fetching search data")
-        }
+    func fetchSearchData(searchedString: String) {
+        searchRepository.fetchSearchData(searchedString: searchedString)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error fetching search data: \(error)")
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] data in
+                self?.SearchData = data
+            })
+            .store(in: &cancellables)
     }
-    
-    func clearSearchData(){
-        SearchData = nil
-    }
+    //    @MainActor
+    //    func fetchSearchData(search: String) async {
+    //        do{
+    //            SearchData = try await networkCall.fetchSearchData(searchedString: search)
+    //            print(SearchData)
+    //        }catch {
+    //            print("Problem in fetching search data")
+    //        }
+    //    }
 }

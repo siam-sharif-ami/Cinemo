@@ -12,6 +12,10 @@ struct MovieDatabase: Codable {
     let status: String
     let status_message: String
     let data: RepoData
+    
+    static func example1()-> MovieDatabase {
+        MovieDatabase(status: "ok", status_message: "Query was successful", data: RepoData(movies: MovieListModel.examples()))
+    }
 }
 
 

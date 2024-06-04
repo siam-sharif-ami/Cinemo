@@ -52,6 +52,7 @@ struct DetailsView: View {
                                 Text("\(genre)")
                                     .font(.subheadline)
                                     .foregroundColor(.white)
+                                    .lineLimit(1)
                             }
                             
                         }
