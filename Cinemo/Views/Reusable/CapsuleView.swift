@@ -13,6 +13,7 @@ struct CapsuleView: View {
     
     var body: some View {
         Text("\(text)")
+            .font(.caption2)
             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
             .background(

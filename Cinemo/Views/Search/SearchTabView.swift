@@ -40,6 +40,7 @@ struct SearchTabView: View {
                             Text(genre)
                                 .font(.system(size: 10))
                                 .foregroundColor(.white)
+                                .lineLimit(1)
                         }
                     }
                     Text("\(search.title)")

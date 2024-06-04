@@ -18,7 +18,7 @@ struct ButtonView: View {
             watchListViewModel.onAdd(add: movie)
             showAlert = true
         }){
-            Text("Add to Watchlist")
+            Text("\(buttonText)")
                 .foregroundColor(.white)
                 .frame(maxWidth : .infinity)
                 .padding()

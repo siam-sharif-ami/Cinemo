@@ -21,7 +21,7 @@ struct Home: View {
                 
                 ScrollView(showsIndicators: false){
                     let fullView = VStack(alignment: .leading ){
-    
+                        
                         ZStack{
                             VStack(alignment: .leading){
                                 
@@ -35,21 +35,11 @@ struct Home: View {
                                         .font(.title2)
                                         .foregroundColor(.white)
                                         .frame(width: .infinity, height: 20)
-                                        
+                                    
                                 }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0))
                                 
                                 HStack{
-                                    
-                                    TabView{
-                                        ForEach(moviesList){ phase in
-                                            NavigationLink(destination: DetailsView(movieComing: phase)){
-                                                        
-                                                FeaturedMovie(movies: phase)
-                                            }
-                                        }
-                                        
-                                    }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-                                        .frame(height: 220)
+                                    MyTab(tabs: moviesList)
                                     
                                 }
                             }

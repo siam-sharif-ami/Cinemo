@@ -19,10 +19,18 @@ struct FeaturedMovie: View {
                     .cornerRadius(15)
                     .shadow(radius: 5)
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                
+                    .frame(height: 220)
+                    .overlay{
+                        Rating(rating: movies.rating)
+                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 160, trailing: 280))
+                        
+                        FeaturedOverlay(movie: movies)
+                            .padding(EdgeInsets(top: 108, leading: 0, bottom: 0, trailing: 0))
+                            .frame(width: 355,height: 180)
+                    }
             }
         }
-        .frame(height: 220)
+        
         
     }
 }

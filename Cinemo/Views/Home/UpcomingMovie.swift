@@ -19,6 +19,10 @@ struct UpcomingMovie: View {
                         .cornerRadius(10)
                         .frame(width: 150, height: 200)
                         .shadow(radius: 5)
+                        .overlay{
+                            Rating(rating: movies.rating)
+                                .padding(EdgeInsets(top: 5, leading: 5, bottom: 150, trailing: 70))
+                        }
                         
                         
                 }

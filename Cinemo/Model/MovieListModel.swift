@@ -60,6 +60,42 @@ struct MovieListModel: Identifiable, Codable{
                 ], rating: 9.5, mpa_rating: "R", year: 2027, runtime: 155, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2027/medium-cover.jpg", cast: [
                     CastData(name: "Chikahiro Kobayashi", character_name: "Saichi Sugimoto", url_small_image: "https://example.com/image1.jpg", imdb_code: "nm1234567"),
                     CastData(name: "Haruka Shiraishi", character_name: "Asirpa", url_small_image: "https://example.com/image2.jpg", imdb_code: "nm2345678")
+                ], description_full: "The epic conclusion of Saichi Sugimoto's quest for the Ainu gold, with intense battles and dramatic revelations."),
+                MovieListModel(id: 5, title: "Golden Kamuy 4", genres: [
+                    "Action",
+                    "Adventure",
+                    "History",
+                    "Western"
+                ], rating: 9.5, mpa_rating: "R", year: 2027, runtime: 155, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2027/medium-cover.jpg", cast: [
+                    CastData(name: "Chikahiro Kobayashi", character_name: "Saichi Sugimoto", url_small_image: "https://example.com/image1.jpg", imdb_code: "nm1234567"),
+                    CastData(name: "Haruka Shiraishi", character_name: "Asirpa", url_small_image: "https://example.com/image2.jpg", imdb_code: "nm2345678")
+                ], description_full: "The epic conclusion of Saichi Sugimoto's quest for the Ainu gold, with intense battles and dramatic revelations."),
+                MovieListModel(id: 6, title: "Golden Kamuy 4", genres: [
+                    "Action",
+                    "Adventure",
+                    "History",
+                    "Western"
+                ], rating: 9.5, mpa_rating: "R", year: 2027, runtime: 155, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2027/medium-cover.jpg", cast: [
+                    CastData(name: "Chikahiro Kobayashi", character_name: "Saichi Sugimoto", url_small_image: "https://example.com/image1.jpg", imdb_code: "nm1234567"),
+                    CastData(name: "Haruka Shiraishi", character_name: "Asirpa", url_small_image: "https://example.com/image2.jpg", imdb_code: "nm2345678")
+                ], description_full: "The epic conclusion of Saichi Sugimoto's quest for the Ainu gold, with intense battles and dramatic revelations."),
+                MovieListModel(id: 7, title: "Golden Kamuy 4", genres: [
+                    "Action",
+                    "Adventure",
+                    "History",
+                    "Western"
+                ], rating: 9.5, mpa_rating: "R", year: 2027, runtime: 155, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2027/medium-cover.jpg", cast: [
+                    CastData(name: "Chikahiro Kobayashi", character_name: "Saichi Sugimoto", url_small_image: "https://example.com/image1.jpg", imdb_code: "nm1234567"),
+                    CastData(name: "Haruka Shiraishi", character_name: "Asirpa", url_small_image: "https://example.com/image2.jpg", imdb_code: "nm2345678")
+                ], description_full: "The epic conclusion of Saichi Sugimoto's quest for the Ainu gold, with intense battles and dramatic revelations."),
+                MovieListModel(id: 8, title: "Golden Kamuy 4", genres: [
+                    "Action",
+                    "Adventure",
+                    "History",
+                    "Western"
+                ], rating: 9.5, mpa_rating: "R", year: 2027, runtime: 155, medium_cover_image: "https://yts.mx/assets/images/movies/golden_kamuy_2027/medium-cover.jpg", cast: [
+                    CastData(name: "Chikahiro Kobayashi", character_name: "Saichi Sugimoto", url_small_image: "https://example.com/image1.jpg", imdb_code: "nm1234567"),
+                    CastData(name: "Haruka Shiraishi", character_name: "Asirpa", url_small_image: "https://example.com/image2.jpg", imdb_code: "nm2345678")
                 ], description_full: "The epic conclusion of Saichi Sugimoto's quest for the Ainu gold, with intense battles and dramatic revelations.")
             ]
         }

@@ -17,7 +17,11 @@
         }
       }
     },
+    "Add to watchlist" : {
+
+    },
     "Add to Watchlist" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bn-BD" : {
           "stringUnit" : {
