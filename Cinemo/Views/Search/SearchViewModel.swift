@@ -111,6 +111,16 @@ class SearchViewModel: ObservableObject{
         return sortState[sort.rawValue] ?? false
     }
     
+    func filterMoviesByGenres(movies: [MovieListModel], selectedGenres: Set<Genres> ) -> [MovieListModel] {
+        if selectedGenres.isEmpty {
+            return movies
+        }else {
+            return movies.filter{ movie in
+                let movieGenres = Set(movie.genres.compactMap { Genres(rawValue: $0)})
+                return selectedGenres.isSubset(of: movieGenres)
+            }
+        }
+    }
     
     //    let networkCall: NetworkCall
     

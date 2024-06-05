@@ -97,8 +97,10 @@ struct Search: View {
         }
         .onReceive(searchViewModel.$SearchData) { newSearchData in
             loaded = true
-            if let movies = newSearchData?.data.movies {
-                searchedMovies = movies
+            if let listOfMovies = newSearchData?.data.movies {
+                var filteredByGenre = searchViewModel.filterMoviesByGenres(movies: listOfMovies, selectedGenres: searchViewModel.selectedGenres)
+                print(filteredByGenre)
+                searchedMovies = filteredByGenre
             } else {
                 searchedMovies = MovieListModel.examples()
             }

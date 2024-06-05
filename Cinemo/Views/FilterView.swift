@@ -18,7 +18,6 @@ struct FilterView: View {
             
             ZStack{
                 
-                Color.black
                 VStack(alignment: .leading){
                     Text("Select SortBy")
                         .fontWeight(.bold)
@@ -62,7 +61,7 @@ struct FilterView: View {
                         .foregroundColor(.white)
                     
                     LazyVGrid(columns: gridItems, spacing: 10) {
-                        ForEach(Genres.allCases, id: \.self) { genre in
+                        ForEach(Genres.allCases.filter{ $0 != .none }, id: \.self) { genre in
                             Button(action: {
                                 searchViewModel.toggleGenreSelection(genre)
                                 searchViewModel.toggleGenreState(genre)
@@ -133,6 +132,7 @@ struct FilterView: View {
                         Button(action: {
                             isSheetPresented = false
                             searchViewModel.fetchSearchData(searchedString: searchedString, selectedOrder: searchViewModel.selectedOrder.rawValue, selectedSortBy: searchViewModel.selectedSortBy.rawValue)
+                            
                         }, label: {
                             Text("Apply")
                                 .padding()

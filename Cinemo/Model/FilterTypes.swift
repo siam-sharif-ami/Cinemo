@@ -11,9 +11,11 @@ enum Genres: String, CaseIterable {
     case action = "Action"
     case adventure = "Adventure"
     case animation = "Animation"
-    case biography = "Biography"
     case comedy = "Comedy"
-    case documentary = "Documentary"
+    case horror = "Horror"
+    case thriller = "Thriller"
+    case romance = "Romance"
+    case none = ""
 }
 
 enum SortBy: String, CaseIterable {
