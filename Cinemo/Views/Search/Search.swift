@@ -9,10 +9,12 @@ import SwiftUI
 
 struct Search: View {
     @State var searchedString: String = ""
-    @State var searchViewModel: SearchViewModel = SearchViewModel()
+    
+    @StateObject var searchViewModel: SearchViewModel = SearchViewModel()
     @State private var searchedMovies = MovieListModel.examples()
     @State private var searchTask: Task<Void, Never>?
     @State private var loaded:Bool = false
+    @State private var isSheetPresented:Bool = false
     
     var body: some View {
         
@@ -27,9 +29,15 @@ struct Search: View {
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         Spacer()
                         Spacer()
-                        Image(systemName: "slider.vertical.3")
-                            .resizable()
-                            .frame(width: 20,height: 20)
+                        Button {
+                            isSheetPresented.toggle()
+                        } label: {
+                            Image(systemName: "slider.vertical.3")
+                                .resizable()
+                                .frame(width: 20,height: 20)
+                        }.sheet(isPresented: $isSheetPresented, content: {
+                            FilterView(searchViewModel: searchViewModel, isSheetPresented: $isSheetPresented, searchedString: $searchedString)
+                        })
                     }
                     .padding(EdgeInsets(top: 10, leading: 15, bottom: 5, trailing: 15))
                     .foregroundColor(.white)
@@ -47,7 +55,7 @@ struct Search: View {
                                 Task.init {
                                     try? await Task.sleep(nanoseconds: 1000000000)
                                     if !Task.isCancelled{
-                                        searchViewModel.fetchSearchData(searchedString: newValue)
+                                        searchViewModel.fetchSearchData(searchedString: newValue,selectedOrder: searchViewModel.selectedOrder.rawValue, selectedSortBy:  searchViewModel.selectedSortBy.rawValue)
                                         loaded = true
                                     }
                                 }
@@ -64,7 +72,7 @@ struct Search: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: (.pink)))
                             
                         }else {
-                            if  !searchedString.isEmpty &&  searchViewModel.SearchData != nil {
+                            if  searchViewModel.SearchData != nil {
                                 LazyVStack{
                                     
                                     ForEach( searchedMovies ){ phase in
@@ -86,7 +94,8 @@ struct Search: View {
                 .font(.footnote)
                 .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
             }
-        }.onReceive(searchViewModel.$SearchData) { newSearchData in
+        }
+        .onReceive(searchViewModel.$SearchData) { newSearchData in
             loaded = true
             if let movies = newSearchData?.data.movies {
                 searchedMovies = movies

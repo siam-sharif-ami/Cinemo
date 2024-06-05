@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol MovieRepositoryProtocol {
-    func fetchSearchData(searchedString: String) -> AnyPublisher<MovieDatabase, Error>
+    func fetchSearchData(searchedString: String, selectedOrder: String, selectedSortBy: String) -> AnyPublisher<MovieDatabase, Error>
 }

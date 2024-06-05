@@ -32,6 +32,7 @@
       }
     },
     "Ami" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bn-BD" : {
           "stringUnit" : {
@@ -40,6 +41,9 @@
           }
         }
       }
+    },
+    "Apply" : {
+
     },
     "Cast" : {
       "localizations" : {
@@ -80,9 +84,6 @@
           }
         }
       }
-    },
-    "Example Value" : {
-
     },
     "Get Started" : {
 
@@ -151,6 +152,7 @@
       }
     },
     "PG %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bn-BD" : {
           "stringUnit" : {
@@ -200,6 +202,15 @@
         }
       }
     },
+    "Select Genre" : {
+
+    },
+    "Select OrderBy" : {
+
+    },
+    "Select SortBy" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "bn-BD" : {
@@ -211,6 +222,7 @@
       }
     },
     "siam sharif" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bn-BD" : {
           "stringUnit" : {

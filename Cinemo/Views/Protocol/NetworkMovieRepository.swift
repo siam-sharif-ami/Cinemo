@@ -3,9 +3,11 @@ import Combine
 
 class NetworkMovieRepository: MovieRepositoryProtocol {
 
-  func fetchSearchData(searchedString: String) -> AnyPublisher<MovieDatabase, Error> {
-    let endPoint = "https://yts.mx/api/v2/list_movies.json?query_term=\(searchedString)"
+  func fetchSearchData(searchedString: String, selectedOrder: String, selectedSortBy: String) -> AnyPublisher<MovieDatabase, Error> {
+    let endPoint = "https://yts.mx/api/v2/list_movies.json?query_term=\(searchedString)&sort_by=\(selectedSortBy)&order_by=\(selectedOrder)"
 
+      print(endPoint)
+      
     guard let url = URL(string: endPoint) else {
         print("bad url ")
       return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
