@@ -17,6 +17,7 @@ struct FilterView: View {
         var body: some View {
             
             ZStack{
+                Color.black
                 
                 VStack(alignment: .leading){
                     Text("Select SortBy")
