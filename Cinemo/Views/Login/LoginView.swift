@@ -16,7 +16,7 @@ struct LoginView: View {
     @State var username: String = ""
     @State var password: String = ""
     @State var isPasswordVisible: Bool = false
-    @StateObject var authenticationViewModel: AuthenticationViewModel = AuthenticationViewModel()
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     @State var isLoggedIn:Bool = false
     
     var body: some View {

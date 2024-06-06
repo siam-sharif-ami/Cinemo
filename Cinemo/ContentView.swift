@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     var body: some View {
         
-        WelcomePage()
+        if authenticationViewModel.currentUser == nil {
+            WelcomePage()
+        }else {
+            NavigationBottom()
+        }
     }
 }
 

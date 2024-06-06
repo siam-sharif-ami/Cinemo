@@ -9,14 +9,28 @@ import SwiftUI
 
 struct Settings: View {
     
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     var body: some View {
         ZStack{
-            Color.black.ignoresSafeArea()
-            Button(action: {
-                UserDefaults.standard.set(false, forKey: "signIn")
-            }, label: {
-                Text("Signout")
-            })
+            List{
+                Section{
+                    VStack{
+                        Text(authenticationViewModel.currentUser?.fullname ?? "Unknown")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .frame(width: 72, height: 72)
+                        Text(authenticationViewModel.currentUser?.email ?? "Unknown")
+                            .font(.footnote)
+                    }
+                }
+                Section{
+                    Button(action: {
+                        authenticationViewModel.signOut()
+                    }, label: {
+                        Text("Signout")
+                    })
+                }
+            }
         }
     }
 }

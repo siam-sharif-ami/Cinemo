@@ -15,19 +15,17 @@ import FirebaseAuth
 struct CinemoApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @AppStorage("signIn") var isSignIn = false
+   
+    @StateObject var authenticationViewModel: AuthenticationViewModel = AuthenticationViewModel()
     
     @StateObject var watchListViewModel:WatchListViewModel = WatchListViewModel()
     
     var body: some Scene {
         WindowGroup {
+            ContentView()
+                .environmentObject(watchListViewModel)
+                .environmentObject(authenticationViewModel)
             
-            if !isSignIn {
-                WelcomePage()
-            }else {
-                NavigationBottom()
-            }
         }
-        .environmentObject(watchListViewModel)
     }
 }

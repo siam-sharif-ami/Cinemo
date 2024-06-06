@@ -10,11 +10,21 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 import GoogleSignInSwift
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 @MainActor
 class AuthenticationViewModel : ObservableObject{
     
+    @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: UserInfo?
     
+    init(){
+        self.userSession = Auth.auth().currentUser
+        Task{
+            await fetchUser()
+        }
+    }
 }
 
 enum AuthenticationError: Error {
@@ -47,8 +57,12 @@ extension AuthenticationViewModel {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accesstoken.tokenString)
             let result = try await Auth.auth().signIn(with: credential)
             let firebaseUser = result.user
-            print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
-            UserDefaults.standard.set(true, forKey: "signIn")
+            
+            // create a user in firestore
+            let userfetched = UserInfo(id: firebaseUser.uid, fullname: firebaseUser.displayName , email: firebaseUser.email)
+            let encodedUser = try Firestore.Encoder().encode(userfetched)
+            try await Firestore.firestore().collection("users").document(userfetched.id).setData(encodedUser)
+            await fetchUser()
             return true
         }catch{
             print(error.localizedDescription)
@@ -57,9 +71,18 @@ extension AuthenticationViewModel {
         }
     }
     
+    func fetchUser() async {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return}
+        self.currentUser = try? snapshot.data(as: UserInfo.self)
+        print("Debug: Current user is \(self.currentUser)")
+    }
+    
     func signOut() {
         do{
             try Auth.auth().signOut()
+            self.userSession = nil
+            self.currentUser = nil
         }catch{
             print(error.localizedDescription)
         }
