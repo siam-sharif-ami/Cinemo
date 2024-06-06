@@ -141,6 +141,9 @@
         }
       }
     },
+    "or" : {
+
+    },
     "password" : {
       "localizations" : {
         "bn-BD" : {
@@ -212,6 +215,7 @@
 
     },
     "Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bn-BD" : {
           "stringUnit" : {
@@ -242,6 +246,9 @@
         }
       }
     },
+    "Sign in with Google" : {
+
+    },
     "Sign Up" : {
       "localizations" : {
         "bn-BD" : {
@@ -251,6 +258,9 @@
           }
         }
       }
+    },
+    "Signout" : {
+
     },
     "Success" : {
       "localizations" : {

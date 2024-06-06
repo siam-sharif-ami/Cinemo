@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct Settings: View {
+    
     var body: some View {
         ZStack{
             Color.black.ignoresSafeArea()
-            Text("Settings")
-                .foregroundColor(.white)
+            Button(action: {
+                UserDefaults.standard.set(false, forKey: "signIn")
+            }, label: {
+                Text("Signout")
+            })
         }
     }
 }

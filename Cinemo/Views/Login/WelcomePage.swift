@@ -56,7 +56,7 @@ struct ExtractedView: View {
     
     
     var body: some View {
-        NavigationLink(destination: LoginPage()){
+        NavigationLink(destination: LoginView()){
             Text("Get Started")
                 .padding()
                 .frame(width: 200, height: 50)
