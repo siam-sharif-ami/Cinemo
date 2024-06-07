@@ -16,9 +16,10 @@ struct WatchCardView: View {
         ZStack(alignment: .leading){
             Rectangle()
                 .frame(width: .infinity, height: 180)
+                .foregroundColor(Color.clear)
                 .cornerRadius(20)
-                .foregroundColor(Color.black.opacity(0.7))
                 .shadow(radius: 5)
+                
             HStack{
                 AsyncImage(url: URL(string: movie.medium_cover_image)){ phase in
                     
@@ -38,7 +39,7 @@ struct WatchCardView: View {
                             
                             Text("\(genre)")
                                 .font(.system(size: 10))
-                                .foregroundColor(.white)
+                                .foregroundColor(.primary)
                                 .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                                 .lineLimit(1)
                             
@@ -47,18 +48,18 @@ struct WatchCardView: View {
                     Text("\(movie.title)")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .font(.title2)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     
                     HStack{
                         CapsuleView(text: "PG- \(movie.mpa_rating)")
                             
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         CapsuleView(text:"\(movie.year)")
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             
                         CapsuleView(text: "\(movie.runtime/60)h \(movie.runtime%60)m ")
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             
                     }.font(.system(size: 12))
                     
@@ -71,7 +72,7 @@ struct WatchCardView: View {
                         Text(String(format: "%.1f",movie.rating))
                             .font(.footnote)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         
                         Spacer()
                         

@@ -18,40 +18,35 @@ struct DetailsView: View {
         
         ZStack{
             
-            Color.black.ignoresSafeArea()
-            
             VStack{
                 
                 Text("Movie Details")
                     .font(.title2)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                 
                 let shimmerView = ScrollView(.vertical, showsIndicators: false ){
                     VStack(alignment: .leading){
-                        TabView{
+                      //  TabView{
                             
                             AsyncImage(url: URL(string: moviePlaceholder.data.movie.medium_cover_image)){ phase in
                                 if let image = phase.image{
                                     image
                                         .resizable()
-                                        .frame(width: .infinity, height: 270)
                                         .cornerRadius(20)
-                                        .padding(EdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15))
+                                        .padding(.horizontal)
                                         .shadow(radius: 5)
-                                        .background(Color.black)
+                                        .frame(maxWidth: .infinity, maxHeight: 300)
+                                    
                                 }
-                            }
+                            }.padding(.vertical)
                             
-                        }.frame(width: .infinity, height: 320)
-                        
-                        
                         HStack{
                             
                             ForEach( moviePlaceholder.data.movie.genres , id:\.self ){ genre in
                                 Text("\(genre)")
                                     .font(.subheadline)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.primary)
                                     .lineLimit(1)
                             }
                             
@@ -63,7 +58,7 @@ struct DetailsView: View {
                             .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         
                         HStack{
                             CapsuleView(text: "PG-\(moviePlaceholder.data.movie.mpa_rating)")
@@ -73,13 +68,13 @@ struct DetailsView: View {
                                 .font(.footnote)
                             CapsuleView(text: viewModel.runtimeFormat(moviePlaceholder.data.movie.runtime))
                                 .font(.footnote)
-                        }.foregroundColor(.white)
+                        }.foregroundColor(.primary)
                         
                         Text(moviePlaceholder.data.movie.description_full)
                             .padding()
                             .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                             .lineLimit(3)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         
                         ButtonView(buttonText: "Add to WatchList", movie: moviePlaceholder.data.movie)
                         

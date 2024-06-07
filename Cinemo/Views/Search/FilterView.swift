@@ -17,12 +17,11 @@ struct FilterView: View {
         var body: some View {
             
             ZStack{
-                Color.black
                 
                 VStack(alignment: .leading){
                     Text("Select SortBy")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                     
                     HStack {
                         ForEach(SortBy.allCases.filter {$0 != .none}, id: \.self){ sort in
@@ -35,7 +34,7 @@ struct FilterView: View {
                                     Text("\(sort.rawValue)")
                                         .font(.caption)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
@@ -45,11 +44,11 @@ struct FilterView: View {
                                     Text("\(sort.rawValue)")
                                         .font(.caption)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
-                                                .stroke(Color.white,lineWidth: 1)
+                                                .stroke(Color.primary,lineWidth: 1)
                                         )
                                     
                                 }
@@ -59,7 +58,7 @@ struct FilterView: View {
                     
                     Text("Select Genre")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                     
                     LazyVGrid(columns: gridItems, spacing: 10) {
                         ForEach(Genres.allCases.filter{ $0 != .none }, id: \.self) { genre in
@@ -72,7 +71,7 @@ struct FilterView: View {
                                         .lineLimit(1)
                                         .font(.caption)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
@@ -83,11 +82,11 @@ struct FilterView: View {
                                         .font(.caption)
                                         .lineLimit(1)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
-                                                .stroke(Color.white, lineWidth: 1)
+                                                .stroke(Color.primary, lineWidth: 1)
                                         )
                                 }
                             }
@@ -107,7 +106,7 @@ struct FilterView: View {
                                     Text("\(order.rawValue)")
                                         .font(.caption)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
@@ -117,11 +116,11 @@ struct FilterView: View {
                                     Text("\(order.rawValue)")
                                         .font(.caption)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: 80, height: 40)
                                         .background(
                                             Capsule()
-                                                .stroke(Color.white,lineWidth: 1)
+                                                .stroke(Color.primary,lineWidth: 1)
                                         )
                                 }
                             })
@@ -137,7 +136,7 @@ struct FilterView: View {
                         }, label: {
                             Text("Apply")
                                 .padding()
-                                .foregroundColor(.white)
+                                .foregroundColor(.primary)
                                 .frame(width: 80, height: 40)
                                 .background(
                                     Capsule()

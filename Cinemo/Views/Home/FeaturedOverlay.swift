@@ -40,7 +40,7 @@ struct FeaturedOverlay: View {
                     )
             }
             
-        }.foregroundColor(.white)
+        }.foregroundColor(.primary)
             .padding()
             .background(.ultraThinMaterial .opacity(0.8))
             .cornerRadius(10)

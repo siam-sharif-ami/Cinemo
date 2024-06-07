@@ -12,15 +12,14 @@ struct WelcomePage: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color.black.ignoresSafeArea(.all)
-                    .opacity(0.9)
+
                 VStack{
                     Spacer()
                     Spacer()
                     Image(systemName: "movieclapper.fill")
                         .font(.system(size: 100))
+                    
                     Text("Cinemo")
-                        .foregroundColor(.white)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .font(.largeTitle)
                         .padding()
@@ -37,7 +36,7 @@ struct WelcomePage: View {
                     
                     Spacer()
                     
-                }.foregroundColor(.white)
+                }.foregroundColor(.primary)
                 
                 
             }

@@ -12,17 +12,19 @@ struct WatchlistView: View {
     @EnvironmentObject var watchListViewModel: WatchListViewModel
     
     var body: some View {
-        ZStack{
+        NavigationView{
             VStack{
                 Text("WatchList")
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                 
                 
                 List{
                     ForEach(watchListViewModel.watchList, id: \.id ){ movie in
-                        WatchCardView(movie: movie)
-                            .listRowBackground(Color.black)
+                        NavigationLink(destination: DetailsView(movieComing: movie)){
+                            WatchCardView(movie: movie)
+                                .listRowBackground(Color.primary)
+                        }.navigationBarBackButtonHidden()
                     }
                     .onDelete(perform: watchListViewModel.onDelete )
                     
@@ -31,7 +33,7 @@ struct WatchlistView: View {
                 .frame(maxWidth: .infinity)
                 
             }
-        }.background(Color.black)
+        }
 
     }
 }

@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+   // @AppStorage("isDarkMode") var isDark = false 
+    
     var body: some View {
         
-        if authenticationViewModel.currentUser == nil {
-            WelcomePage()
-        }else {
-            NavigationBottom()
+        Group{
+            if authenticationViewModel.currentUser == nil {
+                WelcomePage()
+            }else {
+                NavigationBottom()
+            }
         }
     }
 }
@@ -23,4 +27,6 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(WatchListViewModel())
+        
+      
 }

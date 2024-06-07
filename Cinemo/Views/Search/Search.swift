@@ -20,7 +20,6 @@ struct Search: View {
         
         NavigationView{
             ZStack{
-                Color.black.ignoresSafeArea()
                 
                 VStack(alignment: .leading){
                     HStack{
@@ -40,7 +39,7 @@ struct Search: View {
                         })
                     }
                     .padding(EdgeInsets(top: 10, leading: 15, bottom: 5, trailing: 15))
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
                     
                     HStack{
                         Image(systemName: "magnifyingglass")
@@ -60,10 +59,11 @@ struct Search: View {
                                     }
                                 }
                             }
-                    }.foregroundColor(.white)
-                        .padding()
-                        .background(Color(.systemGray))
-                        .cornerRadius(20)
+                    }
+                    .padding()
+                    .cornerRadius(20)
+                    .foregroundColor(.primary)
+
                     
                     
                     ScrollView(.vertical,showsIndicators: false){
@@ -83,9 +83,9 @@ struct Search: View {
                                 }
                                 
                             }else {
-                                Text("No Matches Found")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
+                                    Text("No Matches Found")
+                                        .font(.subheadline)
+                                        .foregroundColor(.primary)
                             }
                         }
                     }
@@ -102,6 +102,7 @@ struct Search: View {
                 print(filteredByGenre)
                 searchedMovies = filteredByGenre
             } else {
+                
                 searchedMovies = MovieListModel.examples()
             }
         }

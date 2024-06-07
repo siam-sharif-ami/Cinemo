@@ -10,17 +10,38 @@ import SwiftUI
 struct Settings: View {
     
     @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
+   
+    @AppStorage("isDarkMode") var isDarkMode = false
+    
     var body: some View {
         ZStack{
             List{
                 Section{
-                    VStack{
-                        Text(authenticationViewModel.currentUser?.fullname ?? "Unknown")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .frame(width: 72, height: 72)
-                        Text(authenticationViewModel.currentUser?.email ?? "Unknown")
-                            .font(.footnote)
+                    HStack{
+                        
+                        AsyncImage(url: authenticationViewModel.userSession?.photoURL) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .shadow(radius: 3)
+                            }else {
+                                Image(systemName: "person.fill.questionmark")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .shadow(radius: 3)
+                            }
+                            
+                        }
+                        
+                        VStack(alignment: .leading){
+                            Text(authenticationViewModel.currentUser?.fullname ?? "Unknown")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .frame(width: 72, height: 72)
+                            Text(authenticationViewModel.currentUser?.email ?? "Unknown")
+                                .font(.footnote)
+                        }
                     }
                 }
                 Section{
@@ -30,6 +51,11 @@ struct Settings: View {
                         Text("Signout")
                     })
                 }
+                Section{
+                    Toggle(isOn: $isDarkMode, label: {
+                                            Text("Dark Mode")
+                                        })
+                }
             }
         }
     }
@@ -38,4 +64,5 @@ struct Settings: View {
 #Preview {
     Settings()
         .environmentObject(WatchListViewModel())
+        
 }

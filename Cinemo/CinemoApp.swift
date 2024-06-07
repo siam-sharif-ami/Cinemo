@@ -20,12 +20,16 @@ struct CinemoApp: App {
     
     @StateObject var watchListViewModel:WatchListViewModel = WatchListViewModel()
     
+    @AppStorage("isDarkMode") var isDarkMode = false
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
                 .environmentObject(watchListViewModel)
                 .environmentObject(authenticationViewModel)
             
         }
+        
     }
 }

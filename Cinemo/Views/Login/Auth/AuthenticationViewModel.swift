@@ -61,7 +61,11 @@ extension AuthenticationViewModel {
             // create a user in firestore
             let userfetched = UserInfo(id: firebaseUser.uid, fullname: firebaseUser.displayName , email: firebaseUser.email)
             let encodedUser = try Firestore.Encoder().encode(userfetched)
-            try await Firestore.firestore().collection("users").document(userfetched.id).setData(encodedUser)
+            if let id = userfetched.id {
+                try await Firestore.firestore().collection("users").document(id).setData(encodedUser)
+            }else {
+                print("error fetching user id")
+            }
             await fetchUser()
             return true
         }catch{
@@ -70,6 +74,40 @@ extension AuthenticationViewModel {
             return false
         }
     }
+    
+    func signUpwithEmailPassword(withEmail email: String , password:String, withFullName fullName: String) async -> Bool{
+        do{
+            let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
+            
+            let firebaseUser = authResult.user
+    
+            let userfetched = UserInfo(id: firebaseUser.uid, fullname: fullName , email: firebaseUser.email)
+            let encodedUser = try Firestore.Encoder().encode(userfetched)
+            
+            if let id = userfetched.id {
+                try await Firestore.firestore().collection("users").document(id).setData(encodedUser)
+            }else {
+                print("error fetching user id")
+            }
+            return true
+        }catch {
+            print(error.localizedDescription)
+            return false
+        }
+    }
+    
+    func signInWithEmailPassword(withEmail email:String, password: String) async -> Bool {
+        do{
+            let user = try await Auth.auth().signIn( withEmail: email, password: password )
+            await fetchUser()
+            return true
+        }catch{
+            print("Credentials don't match")
+            return false
+        }
+        
+    }
+    
     
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }

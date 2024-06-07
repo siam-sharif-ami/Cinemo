@@ -9,10 +9,13 @@ import SwiftUI
 
 struct NavigationBottom: View {
     
-    init() {
-            // Customize the appearance of the UITabBar
-            UITabBar.appearance().barTintColor = .black
-        }
+    
+    
+//    init() {
+//           
+//            
+//        UITabBar.appearance().barTintColor = .clear
+//        }
     var body: some View {
         ZStack{
             

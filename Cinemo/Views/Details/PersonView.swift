@@ -23,7 +23,7 @@ struct PersonView: View {
                                     if let image = phase.image{
                                         image
                                             .resizable()
-                                            .frame(width: 150,height: 150)
+                                            .frame(width: 100,height: 100)
                                             .cornerRadius(15)
                                             
                                     }
@@ -31,14 +31,16 @@ struct PersonView: View {
                                         Text("\(castCharacterName)")
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                             .font(.subheadline)
-                                            .frame(width: 150, alignment: .leading )
+                                            .foregroundColor(.primary)
+                                            .frame(width: 100, alignment: .leading )
                                             .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                                             .lineLimit(1)
                                     }
                                     if let castRealName = cast.name {
                                         Text("\(castRealName)")
                                             .font(.subheadline)
-                                            .frame(width: .infinity )
+                                            .foregroundColor(.primary)
+                                            .frame(width: 100)
                                             .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
                                             .lineLimit(1)
                                     }

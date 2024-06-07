@@ -23,7 +23,7 @@ struct Rating: View {
         }
         
         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-        .foregroundColor(.white)
+        .foregroundColor(.primary)
         .background(.ultraThinMaterial)
         .overlay{
             RoundedRectangle(cornerRadius: 5)

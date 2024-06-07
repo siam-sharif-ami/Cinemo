@@ -32,7 +32,7 @@ struct UpcomingMovie: View {
                 .fontWeight(.semibold)
                 .frame(width: 150,alignment: .leading)
                 .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.white)
+                .foregroundColor(.primary)
                 .lineLimit(1)
                 
             HStack{
@@ -40,7 +40,7 @@ struct UpcomingMovie: View {
                 Text("\(movies.mpa_rating)")
                 Text("\(movies.runtime/60)h \(movies.runtime%60)m")
                     
-            }.foregroundColor(.white)
+            }.foregroundColor(.primary)
                 .font(.footnote)
                 
         }

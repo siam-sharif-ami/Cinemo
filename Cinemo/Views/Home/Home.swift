@@ -9,7 +9,7 @@ import SwiftUI
 import Shimmer
 
 struct Home: View {
-    
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     @State private var moviesList = MovieListModel.examples()
     @State private var viewModel = ViewModel()
     @State private var loaded = false
@@ -27,13 +27,13 @@ struct Home: View {
                                 
                                 VStack(alignment: .leading){
                                     Text("Welcome Back")
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: .infinity, height: 20)
                                     
-                                    Text("Siam Sharif Ami")
+                                    Text(authenticationViewModel.currentUser?.fullname ?? "Unknown")
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                         .font(.title2)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .frame(width: .infinity, height: 20)
                                     
                                 }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0))
@@ -55,7 +55,7 @@ struct Home: View {
                             Text("See all")
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         
                         ///
                         ScrollView(.horizontal, showsIndicators: false){
@@ -77,7 +77,7 @@ struct Home: View {
                             Text("See all")
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                         
                         
                         ScrollView(.horizontal, showsIndicators: false){
@@ -99,7 +99,7 @@ struct Home: View {
                     else {
                         fullView.redacted(reason: .placeholder).shimmering()
                     }
-                }.background(Color.black)
+                }
             }
             
             
