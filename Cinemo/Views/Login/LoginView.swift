@@ -101,7 +101,7 @@ struct LoginView: View {
                                 
                             }else {
                                 showLogInFailed = true
-                               
+                                
                             }
                         }
                     }, label: {
@@ -114,7 +114,7 @@ struct LoginView: View {
                                 .foregroundColor(.primary)
                         }.frame(width: 310,height: 40)
                     }).buttonStyle(.bordered)
-
+                    
                     
                     Spacer()
                     
@@ -150,9 +150,8 @@ struct LoginView: View {
                 NavigationLink( destination: NavigationBottom(), isActive: $isLoggedIn){
                     EmptyView()
                 }
-            
+                
             }
-            
         }
     }
 }

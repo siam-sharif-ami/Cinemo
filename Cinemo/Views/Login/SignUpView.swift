@@ -19,7 +19,6 @@ struct SignUpView: View {
     @State var signUpSuccess: Bool = false
     
     var body: some View {
-        NavigationStack{
             VStack{
                 Text("Sign Up")
                     .font(.title)
@@ -122,7 +121,7 @@ struct SignUpView: View {
                 }
                 
             }
-        }
+        
     }
 }
 

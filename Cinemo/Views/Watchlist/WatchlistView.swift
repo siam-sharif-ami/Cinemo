@@ -18,9 +18,8 @@ struct WatchlistView: View {
                     .font(.title)
                     .foregroundColor(.primary)
                 
-                
                 List{
-                    ForEach(watchListViewModel.watchList, id: \.id ){ movie in
+                    ForEach(watchListViewModel.watchList.movies, id: \.id ){ movie in
                         NavigationLink(destination: DetailsView(movieComing: movie)){
                             WatchCardView(movie: movie)
                                 .listRowBackground(Color.primary)

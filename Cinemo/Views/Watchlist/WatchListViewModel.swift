@@ -1,52 +1,88 @@
-//
-//  WatchListViewModel.swift
-//  Cinemo
-//
-//  Created by BS00484 on 30/5/24.
-//
-
 import Foundation
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
+@MainActor
 @Observable
-class WatchListViewModel: ObservableObject{
+class WatchListViewModel: ObservableObject {
     
-    var watchList: [MovieListModel] = []{
-        didSet{
-            saveItems()
+    var currentUserID: String? {
+        didSet {
+            Task {
+                await getFromFirebase()
+            }
+        }
+    }
+    
+    var watchList: RepoData = RepoData(movies: [] ) {
+        didSet {
+            Task {
+                await saveToFirebase()
+            }
         }
     }
     
     init() {
-        getItems()
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if let user = user {
+                self?.currentUserID = user.uid
+                print("Auth state changed: User is signed in with ID: \(user.uid)")
+            } else {
+                self?.currentUserID = nil
+                print("Auth state changed: No user is signed in.")
+            }
+        }
     }
     
-    let itemsKey: String = "items_list"
+    func onDelete(indexSet: IndexSet) {
+        watchList.movies.remove(atOffsets: indexSet)
+    }
     
-    func getItems(){
-        guard 
-            let data = UserDefaults.standard.data(forKey: itemsKey),
-            let savedItems = try? JSONDecoder().decode([MovieListModel].self, from: data)
-        else { return }
+    func onAdd(add movie: MovieListModel) {
+        if !watchList.movies.contains(where: { $0.id == movie.id }) {
+            watchList.movies.append(movie)
+        }
+    }
+    
+    func getFromFirebase() async {
+        guard let id = currentUserID else { return }
         
-        self.watchList = savedItems
-    }
-    
-    func runtimeFormat(_ runtime: Int ) -> String {
-        return "\(runtime/60)h \(runtime%60)m"
-    }
-    func onDelete(indexSet: IndexSet){
-        watchList.remove(atOffsets: indexSet)
-    }
-    func onAdd(add movie: MovieListModel){
-        if !watchList.contains(where: {$0.id == movie.id }){
-            watchList.append(movie)
+        do {
+            
+            let snapshot = try await Firestore.firestore().collection("Watchlists").document(id).getDocument()
+            
+            if let data = snapshot.data() {
+                print("Document data: \(data)")
+                
+                self.watchList = try snapshot.data(as: RepoData.self)
+                
+                print("Successfully fetched watchlist from Firebase: \(self.watchList)")
+            } else {
+                self.watchList = RepoData(movies: [])
+                print("No document found for user ID: \(id). Initializing watchList as empty.")
+            }
+        } catch {
+            print("Error fetching watchlist from Firebase: \(error.localizedDescription)")
         }
     }
     
-    func saveItems() {
-        if let encodedData = try? JSONEncoder().encode(watchList) {
-            UserDefaults.standard.set(encodedData, forKey: itemsKey)
+    func saveToFirebase() async {
+        guard let id = currentUserID else {
+            print("currentUserID is nil, cannot save to Firebase.")
+            return
+        }
+        do {
+            
+            let encodedData = try Firestore.Encoder().encode(watchList)
+            
+            print("Saving watchlist to Firebase for user ID: \(id)")
+            try await Firestore.firestore().collection("Watchlists").document(id).setData(encodedData)
+            print("Successfully saved watchlist to Firebase: \(encodedData)")
+            
+        } catch {
+            print("Save failed: \(error.localizedDescription)")
         }
     }
-    
 }
