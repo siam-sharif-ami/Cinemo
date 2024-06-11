@@ -95,7 +95,7 @@ struct FilterView: View {
                     
                     Text("Select OrderBy")
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                     HStack {
                         ForEach(OrderBy.allCases.filter{ $0 != .none }, id: \.self){ order in
                             Button(action: {
@@ -147,14 +147,7 @@ struct FilterView: View {
                     }.padding()
                     
                 }.padding()
-                    .onAppear(){
-                        searchViewModel.initGenreState()
-                        searchViewModel.initOrderState()
-                        searchViewModel.initSortState()
-                        
-                        searchViewModel.initSelectedOrder()
-                        searchViewModel.initSelectedSortBy()
-                    }
+                    
             }
         }
     

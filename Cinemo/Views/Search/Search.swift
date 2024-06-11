@@ -72,7 +72,7 @@ struct Search: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: (.pink)))
                             
                         }else {
-                            if  searchViewModel.SearchData != nil {
+                            if  !searchedMovies.isEmpty {
                                 LazyVStack{
                                     
                                     ForEach( searchedMovies ){ phase in
@@ -103,8 +103,16 @@ struct Search: View {
                 searchedMovies = filteredByGenre
             } else {
                 
-                searchedMovies = MovieListModel.examples()
+                searchedMovies = []
             }
+        }
+        .onAppear(){
+            searchViewModel.initGenreState()
+            searchViewModel.initOrderState()
+            searchViewModel.initSortState()
+            
+            searchViewModel.initSelectedOrder()
+            searchViewModel.initSelectedSortBy()
         }
     }
 }

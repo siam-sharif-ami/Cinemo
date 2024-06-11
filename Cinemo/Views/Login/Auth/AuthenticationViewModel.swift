@@ -32,6 +32,7 @@ enum AuthenticationError: Error {
 }
 
 extension AuthenticationViewModel {
+    
     func signInWithGoogle() async -> Bool {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
             fatalError("No client ID found in Firebase configuration")
@@ -75,7 +76,7 @@ extension AuthenticationViewModel {
         }
     }
     
-    func signUpwithEmailPassword(withEmail email: String , password:String, withFullName fullName: String) async -> Bool{
+    func signUpwithEmailPassword(withEmail email: String , password:String, withFullName fullName: String) async -> Bool {
         do{
             let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
             

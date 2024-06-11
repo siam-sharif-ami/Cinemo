@@ -3,6 +3,7 @@ import Combine
 
 class NetworkMovieRepository: MovieRepositoryProtocol {
 
+    
   func fetchSearchData(searchedString: String, selectedOrder: String, selectedSortBy: String) -> AnyPublisher<MovieDatabase, Error> {
     let endPoint = "https://yts.mx/api/v2/list_movies.json?query_term=\(searchedString)&sort_by=\(selectedSortBy)&order_by=\(selectedOrder)"
 

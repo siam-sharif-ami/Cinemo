@@ -17,6 +17,7 @@ struct SignUpView: View {
     @State var isConfirmPasswordVisible: Bool = false
     @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     @State var signUpSuccess: Bool = false
+    @State var signUpFailed: Bool = false
     
     var body: some View {
             VStack{
@@ -94,6 +95,8 @@ struct SignUpView: View {
                         
                         if success {
                             signUpSuccess = true
+                        } else {
+                            signUpFailed = true
                         }
                     }
                 }){
@@ -112,6 +115,13 @@ struct SignUpView: View {
                     Alert(
                         title: Text("Successfully signed Up"),
                         message: Text("Redirecting to Login Page"),
+                        dismissButton: .default(Text("Ok"))
+                    )
+                })
+                .alert(isPresented: $signUpFailed, content: {
+                    Alert(
+                        title: Text("Sign Up Failed"),
+                        message: Text("Email address is already Registered"),
                         dismissButton: .default(Text("Ok"))
                     )
                 })

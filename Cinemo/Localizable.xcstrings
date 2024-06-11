@@ -97,6 +97,9 @@
     "Email" : {
 
     },
+    "Email address is already Registered" : {
+
+    },
     "Fullname" : {
 
     },
@@ -295,6 +298,9 @@
           }
         }
       }
+    },
+    "Sign Up Failed" : {
+
     },
     "Signout" : {
 
