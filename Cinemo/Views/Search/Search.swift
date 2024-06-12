@@ -36,7 +36,9 @@ struct Search: View {
                                 .frame(width: 20,height: 20)
                         }.sheet(isPresented: $isSheetPresented, content: {
                             FilterView(searchViewModel: searchViewModel, isSheetPresented: $isSheetPresented, searchedString: $searchedString)
-                        })
+                                .presentationDetents([.medium])
+                        }
+                        )
                     }
                     .padding(EdgeInsets(top: 10, leading: 15, bottom: 5, trailing: 15))
                     .foregroundColor(.primary)

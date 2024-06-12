@@ -73,12 +73,19 @@ struct SearchTabView: View {
                             .foregroundColor(.primary)
                         
                         Spacer()
-                        
+                        Text("Add to watchlist")
+                            .foregroundStyle(.white)
+                            .font(.caption)
+                            .frame(width: 150, height: 100)
+                            .background(
+                                ButtonView(buttonText: "" , movie: search )
+                            )
                         
                     }
                 }.padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
             }.frame(width: .infinity, height: 180)
         }
+        
     }
 }
 
