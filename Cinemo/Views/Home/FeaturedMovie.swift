@@ -25,8 +25,8 @@ struct FeaturedMovie: View {
                             .padding(EdgeInsets(top: 5, leading: 5, bottom: 160, trailing: 280))
                         
                         FeaturedOverlay(movie: movies)
-                            .padding(EdgeInsets(top: 108, leading: 0, bottom: 0, trailing: 0))
-                            .frame(width: 355,height: 180)
+                            .padding(EdgeInsets(top: 112, leading: 0, bottom: 0, trailing: 0))
+                            .frame(width: 382,height: 200)
                     }
             }
         }

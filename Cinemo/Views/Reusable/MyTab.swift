@@ -10,43 +10,41 @@ import SwiftUI
 struct MyTab: View {
     @State private var selectedTab = 0
     let tabs: [MovieListModel]
-    let indicatorHeight: CGFloat = 5
-    let indicatorWidth: CGFloat = 1
     let indicatorColor = Color.blue // Customize indicator color
+    let indicatorWidth: CGFloat = 2
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                // TabView
-                TabView(selection: self.$selectedTab) {
-                    ForEach(self.tabs.indices, id: \.self) { index in
-                        NavigationLink(destination: DetailsView(movieComing: tabs[index])){
-                            FeaturedMovie(movies: tabs[index])
-                        }
+        
+        VStack {
+            // TabView
+            TabView(selection: self.$selectedTab) {
+                ForEach(self.tabs.indices, id: \.self) { index in
+                    NavigationLink(destination: DetailsView(movieComing: tabs[index])){
+                        FeaturedMovie(movies: tabs[index])
                     }
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .overlay{
-                    
-                    HStack {
-                        ForEach(self.tabs.indices, id: \.self) { index in
-                            if self.selectedTab == index {
-                                Capsule()
-                                    .fill(self.indicatorColor)
-                                    .frame(width: 10, height: 5)
-                            } else {
-                                Circle()
-                                    .fill(.gray)
-                                    .frame(width: 10, height: 5)
-                            }
-                        }
-                    }
-                    .frame(width: 50 ,height: indicatorHeight)
-                    .padding(.top, 180)
-                    
                 }
             }
-        }.frame(height: 220)
+            
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
+            
+        }.overlay(alignment: .bottom){
+            HStack {
+                ForEach(self.tabs.indices, id: \.self) { index in
+                    if self.selectedTab == index {
+                        Capsule()
+                            .fill(self.indicatorColor)
+                            .frame(width: 15, height: 3)
+                    } else {
+                        Circle()
+                            .fill(.gray)
+                            .frame(width: 8, height: 3)
+                    }
+                }
+            }.frame(maxWidth: 50)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+        }.frame(width: 400, height: 250)
+        
     }
     
 }

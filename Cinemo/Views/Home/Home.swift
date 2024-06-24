@@ -49,11 +49,11 @@ struct Home: View {
                         
                         HStack{
                             Text("Top Movie Picks")
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                                 .font(.title2)
                             Spacer()
                             Text("See all")
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                         }.padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
                             .foregroundColor(.primary)
                         
