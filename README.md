@@ -24,23 +24,23 @@ A Movie Database iOS Application featuring latest and upcoming movies.
 # Screenshots
 **Home Page**
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="./Resources/Screenshots/Dashboard.png" style="width: 45%; margin: 5px;">
-  <img src="./Resources/Screenshots/Dashboard_dark.png" style="width: 45%; margin: 5px;">
+  <img src="./Resources/Screenshots/Dashboard.png" style="width: 30%; margin: 5px;">
+  <img src="./Resources/Screenshots/Dashboard_dark.png" style="width: 30%; margin: 5px;">
 </div>
 <br>
 
 **Search Page** and **Details Page**
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="./Resources/Screenshots/Search.png" style="width: 45%; margin: 5px;">
-  <img src="./Resources/Screenshots/Details.png" style="width: 45%; margin: 5px;">
+  <img src="./Resources/Screenshots/Search.png" style="width: 30%; margin: 5px;">
+  <img src="./Resources/Screenshots/Details.png" style="width: 30%; margin: 5px;">
 </div>
 
 <br>
 
 **Watchlists** and **Login**
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="./Resources/Screenshots/Watchlists.png" style="width: 45%; margin: 5px;">
-  <img src="./Resources/Screenshots/login.png" style="width: 45%; margin: 5px;">
+  <img src="./Resources/Screenshots/Watchlists.png" style="width: 30%; margin: 5px;">
+  <img src="./Resources/Screenshots/login.png" style="width: 30%; margin: 5px;">
 </div>
 
 <br>
@@ -48,7 +48,7 @@ A Movie Database iOS Application featuring latest and upcoming movies.
 # Demonstration
 
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="./Resources/Videos/InShot_20241102_230026767-ezgif.com-video-to-gif-converter.gif" style="width: 70%; margin: 5px;">
+  <img src="./Resources/Videos/InShot_20241102_230026767-ezgif.com-video-to-gif-converter.gif" style="width: 50%; margin: 5px;">
 </div>
 
 
